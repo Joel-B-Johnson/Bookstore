@@ -1,8 +1,8 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v8.5.11',
-    'version' => '8.5.11.0',
+    'pretty_version' => '1.0.0+no-version-set',
+    'version' => '1.0.0.0',
     'aliases' => 
     array (
     ),
@@ -440,8 +440,8 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v8.5.11',
-      'version' => '8.5.11.0',
+      'pretty_version' => '1.0.0+no-version-set',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
@@ -455,6 +455,15 @@
       array (
       ),
       'reference' => '87c63c2956749f66e43467d4a730b917ef7428b7',
+    ),
+    'laravel/telescope' => 
+    array (
+      'pretty_version' => 'v4.4.5',
+      'version' => '4.4.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0af30c675df3baff51c919e14b7ff12fa46e380f',
     ),
     'laravel/tinker' => 
     array (
@@ -760,8 +769,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
