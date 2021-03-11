@@ -48,7 +48,7 @@ return [
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'bookstore-db.cgvmuzckuiy6.us-east-2.rds.amazonaws.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'bookstore-db'),
+            'database' => env('DB_DATABASE', ''),
             'username' => env('DB_USERNAME', 'admin'),
             'password' => env('DB_PASSWORD', 'dolphin69'),
             'unix_socket' => env('DB_SOCKET', ''),
