@@ -1620,17 +1620,17 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.4.5",
-            "version_normalized": "4.4.5.0",
+            "version": "v4.4.6",
+            "version_normalized": "4.4.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "0af30c675df3baff51c919e14b7ff12fa46e380f"
+                "reference": "903c709b46b5f877c8434c657f964c7bdea7a6a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/0af30c675df3baff51c919e14b7ff12fa46e380f",
-                "reference": "0af30c675df3baff51c919e14b7ff12fa46e380f",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/903c709b46b5f877c8434c657f964c7bdea7a6a4",
+                "reference": "903c709b46b5f877c8434c657f964c7bdea7a6a4",
                 "shasum": ""
             },
             "require": {
@@ -1643,7 +1643,7 @@
                 "ext-gd": "*",
                 "orchestra/testbench": "^6.0"
             },
-            "time": "2021-03-09T19:20:02+00:00",
+            "time": "2021-03-11T13:32:54+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1681,7 +1681,7 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.4.5"
+                "source": "https://github.com/laravel/telescope/tree/v4.4.6"
             },
             "install-path": "../laravel/telescope"
         },
@@ -7737,6 +7737,7 @@
         "filp/whoops",
         "hamcrest/hamcrest-php",
         "laravel/sail",
+        "laravel/telescope",
         "mockery/mockery",
         "myclabs/deep-copy",
         "nunomaduro/collision",
