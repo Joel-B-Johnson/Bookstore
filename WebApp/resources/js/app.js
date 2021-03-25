@@ -1,18 +1,8 @@
 require('./bootstrap');
+import {createApp} from 'vue'
+import router from './routes/index'
+import Home from './components/Home'
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
 
-Vue.component(
-    'home',
-    require('./components/Home.vue')
-);
-
-Vue.component(
-    'navbar',
-    require('./components/Navbar.vue')
-);
-
-
-const app = new Vue({
-    el: '#app'
-});
+createApp(Home).use(router).mount('#app')

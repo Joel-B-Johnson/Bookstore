@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello home page</title>
-    </head>
-    <body>
+<template>
     <div>
-        <h2>Home</h2>
-        <h1>Hello WOrld<h1>
+        <head>
+            <title>Hello home page</title>
+        </head>
+        <div>
+            <h2>Home</h2>
+            <h1>Hello WOrld<h1>
+        </div>
     </div>
-    <body>
-
-</html>
+</template>
 
 <script>
 export default {
+    components: Home,
+    mounted() {             
+         console.log('mounted!')         
+      }, 
 
 }
+
 </script>
 
-<style>
+<style scoped>
 
 </style>
