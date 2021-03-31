@@ -13,6 +13,11 @@ const routes = [
     name: 'Admin',
     component: Admin,
   },
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: Dashboard
+  },
 ];
  
 const router = createRouter({
