@@ -1,17 +1,29 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link>
-        <router-link to="/admin">Admin</router-link>
-    </div>
-    <router-view />
+    <navbar></navbar>
 </template>
 
 <script>
+import Navbar from './components/Navbar.vue'
 export default {
-
+    name: 'App',
+    data() {
+        return {
+            
+        }
+    },
+    components: { Navbar },
 }
+
 </script>
 
-<style scoped>
+<style>
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
 
 </style>

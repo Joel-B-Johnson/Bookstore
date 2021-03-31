@@ -4,7 +4,10 @@
 
 <script>
 export default {
-
+    name: 'Home',
+    components: {
+        //Dashboard,
+    }
 }
 </script>
 
