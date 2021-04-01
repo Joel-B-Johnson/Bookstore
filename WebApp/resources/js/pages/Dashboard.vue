@@ -1,16 +1,4 @@
 <template>
----
-layout: examples
-title: Dashboard Template
-extra_css:
-  - "dashboard.css"
-extra_js:
-  - src: "https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
-    integrity: "sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
-  - src: "https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
-    integrity: "sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
-  - src: "dashboard.js"
----
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
@@ -256,61 +244,66 @@ extra_js:
 </template>
 
 <script>
-export default {
+    export default {
 	/* globals Chart:false, feather:false */
 
 (function () {
-    'use strict'
-  
-    feather.replace()
-  
-    // Graphs
-    var ctx = document.getElementById('myChart')
-    // eslint-disable-next-line no-unused-vars
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: [
-          'Sunday',
-          'Monday',
-          'Tuesday',
-          'Wednesday',
-          'Thursday',
-          'Friday',
-          'Saturday'
-        ],
-        datasets: [{
-          data: [
-            15339,
-            21345,
-            18483,
-            24003,
-            23489,
-            24092,
-            12034
-          ],
-          lineTension: 0,
-          backgroundColor: 'transparent',
-          borderColor: '#007bff',
-          borderWidth: 4,
-          pointBackgroundColor: '#007bff'
-        }]
-      },
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: false
+        'use strict'
+
+        feather.replace()
+
+        // Graphs
+        var ctx = document.getElementById('myChart')
+        // eslint-disable-next-line no-unused-vars
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thursday',
+                    'Friday',
+                    'Saturday'
+                ],
+                datasets: [{
+                    data: [
+                        15339,
+                        21345,
+                        18483,
+                        24003,
+                        23489,
+                        24092,
+                        12034
+                    ],
+                    lineTension: 0,
+                    backgroundColor: 'transparent',
+                    borderColor: '#007bff',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#007bff'
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: false
+                        }
+                    }]
+                },
+                legend: {
+                    display: false
+                }
             }
-          }]
-        },
-        legend: {
-          display: false
+        })
+    })(); /* This may need to change from ; to , */
+name: "Dashboard",
+    data() {
+        return {
+
         }
-      }
-    })
-  })()
-  
+    }
 
 }
 </script>

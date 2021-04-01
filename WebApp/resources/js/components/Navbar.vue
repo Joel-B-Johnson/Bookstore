@@ -5,6 +5,7 @@
             <li class="navlink"><router-link to="/">Home</router-link></li>
             <li class="navlink"><router-link to="/admin">Admin</router-link></li>
             <li class="navlink"><router-link to="/login">Login</router-link></li>
+            <li class="navlink"><router-link to="/dashboard">Dashboard</router-link></li>
         </ul>
         <div class="burger">
             <i class="fas fa-bars"></i>
