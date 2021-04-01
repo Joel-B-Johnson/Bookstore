@@ -17,8 +17,7 @@ class CreateBooksTable extends Migration
             $table->increments('id');
             $table->string('book_image');
             $table->string('publisher');
-            $table->string('author_fname');
-            $table->string('author_lname');
+            $table->string('author');
             $table->string('isbn');
             $table->string('title');
             $table->float('price');

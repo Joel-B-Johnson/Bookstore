@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../sass/app.scss" />
         <title>Rickzon</title>
-        <link rel="icon" href="../../public/favicon.ico"/>
+        <link rel="icon" href="../assets/rick.png"/>
     </head>
     <body>
         <div id="app">
