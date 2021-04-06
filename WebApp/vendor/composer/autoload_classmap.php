@@ -14,6 +14,7 @@ return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AppController' => $baseDir . '/app/Http/Controllers/AppController.php',
+    'App\\Http\\Controllers\\BookController' => $baseDir . '/app/Http/Controllers/BookController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\PaymentsController' => $baseDir . '/app/Http/Controllers/PaymentsController.php',
     'App\\Http\\Controllers\\UsersController' => $baseDir . '/app/Http/Controllers/UsersController.php',
