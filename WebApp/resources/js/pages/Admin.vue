@@ -1,5 +1,10 @@
 <template>
-    <h1>Admin Page</h1>
+    <div>
+        <head>
+            <title>Rickizon | Admin</title>
+        </head>
+        <h1>Admin Page</h1>
+    </div>
 </template>
 
 <script>

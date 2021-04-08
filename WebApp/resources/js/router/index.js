@@ -1,9 +1,10 @@
-import { createWebHistory, createRouter } from "vue-router";
-import Home from '../pages/Home.vue';
+import { createWebHistory, createRouter } from "vue-router"
+import Home from '../pages/Home.vue'
 import Admin from '../pages/Admin.vue'
 import Login from '../pages/Login.vue'
- 
-const routes = [ 
+import Dashboard from '../pages/Dashboard.vue'
+
+const routes = [
   {
     path: '/',
     name: 'Home',
@@ -15,20 +16,20 @@ const routes = [
     component: Admin,
   },
   {
-    path:'/login',
+    path: '/login',
     name: 'Login',
     component: Login,
-  }
-  // {
-  //   path: '/',
-  //   name: 'Dashboard',
-  //   component: Dashboard
-  // },
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard
+  },
 ];
- 
+
 const router = createRouter({
   history: createWebHistory(),
   routes,
 });
- 
+
 export default router;
