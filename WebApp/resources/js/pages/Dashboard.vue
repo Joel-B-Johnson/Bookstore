@@ -3,18 +3,21 @@
     <head>
       <title>Rickizon | Dashboard</title>
     </head>
-    <h1>Dashboard</h1>
+    <div id="body">
+      <h1>This is the dashboard</h1>
+      <input v-model="message" placeholder="enter SQL query" />
+      <p></p>
+    </div>
   </div>
 </template>
 
 <script>
-  // import '../sass/dashboard.scss' 
-  //  export default {
-  //   name: 'Dashboard',
-  //   components: {
-        
-  //   }
+// import '../sass/dashboard.scss'
+//  export default {
+//   name: 'Dashboard',
+//   components: {
 
+//   }
 </script>
 
 <style scoped>
