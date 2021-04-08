@@ -21,19 +21,6 @@ export default {
 
 </script>
 
-<style scoped>
-#nav {
-    margin: 0;
-    padding: 0;
-}
-.nav {
-    display: flex;
-    justify-content: space-around;
-    width: 30%;
-}
+<style lang="scss" scoped>
 
-.nav li {
-    list-style: none;
-    margin: 0;
-}
 </style>
