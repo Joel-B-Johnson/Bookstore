@@ -27,7 +27,7 @@ export default {
         {
           title: "name of the wind",
           auhtor: "patrick rothfuss",
-          img: './../assets/2.jpg',
+          img: '"./../assets/1.jpg"',
           isFav: true,
         },
         {

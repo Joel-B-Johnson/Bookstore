@@ -16677,7 +16677,7 @@ __webpack_require__.r(__webpack_exports__);
       books: [{
         title: "name of the wind",
         auhtor: "patrick rothfuss",
-        img: './../assets/2.jpg',
+        img: '"./../assets/1.jpg"',
         isFav: true
       }, {
         title: "the way of kings",

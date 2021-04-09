@@ -16677,7 +16677,7 @@ __webpack_require__.r(__webpack_exports__);
       books: [{
         title: "name of the wind",
         auhtor: "patrick rothfuss",
-        img: './../assets/2.jpg',
+        img: '"./../assets/1.jpg"',
         isFav: true
       }, {
         title: "the way of kings",
@@ -59576,10 +59576,6 @@ function compileToFunction(template, options) {
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
 /******/ 	__webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/js/app.js")))
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
-/******/ })()
-;r __webpack_exports__ = __webpack_require__.O(undefined, ["css/app"], () => (__webpack_require__("./resources/sass/app.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
