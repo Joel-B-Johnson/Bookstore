@@ -5,8 +5,10 @@
     </head>
     <div id="body">
       <h1>This is the dashboard</h1>
-      <input v-model="message" placeholder="enter SQL query" />
-      <p></p>
+      <form action="ambassador.php" method="post"> 
+            <input id="query" v-model="message" placeholder="enter SQL query" />
+            <button type="submit">Submit</button>
+      </form>
     </div>
   </div>
 </template>
