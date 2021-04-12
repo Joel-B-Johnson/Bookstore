@@ -1,4 +1,7 @@
 <template>
+<head>
+  <title>Rickizon | Register</title>
+</head>
   <div>
       <h1>Register Here</h1>
   </div>

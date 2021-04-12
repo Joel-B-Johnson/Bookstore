@@ -5,7 +5,7 @@
   <div v-if="showBooks">
     <ul>
       <li v-for=" book in books" :key="book.title">
-        <img :src="book.img" :alt="book.title">
+        {{ img }}
         <h3>{{ book.title }}</h3>
         <p>{{ book.author }}</p>
       </li>
@@ -27,7 +27,7 @@ export default {
         {
           title: "name of the wind",
           auhtor: "patrick rothfuss",
-          img: '"./../assets/1.jpg"',
+          img: "./../assets/1.jpg",
           isFav: true,
         },
         {
