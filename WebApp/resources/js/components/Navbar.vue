@@ -1,46 +1,81 @@
 <template>
-  <nav>
-    <div class="menu-item"><router-link id="item" to="/">Home</router-link></div>
-    <div class="menu-item"><router-link id="item" to="/login">Login</router-link></div>
-    <div class="menu-item"><router-link id="item" to="/register">Register</router-link></div>
-    <div class="menu-item"><router-link id="item" to="/dashboard">Dashboard</router-link></div>
-  </nav>
+    <div class="navig">
+        <img src="../../assets/navRick.jpg" alt="ricky" class="logo" />
+        <nav>
+            <li><router-link class="lie" to="/login">Login</router-link></li>
+            <li><router-link class="lie" to="/">Home</router-link></li>
+            <li><router-link class="lie" to="/register">Register</router-link></li>
+            <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
+        </nav>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "navbar",
-  components: {},
+    name: "navbar",
+    components: {},
 };
 </script>
 
-<style scoped>
-nav {
-  width: 100vw;
-  background-color: #222;
-  padding: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+<style>
+.navig {
+    width: 100vw;
+    background-color: #222;
+    padding: 15px;
+    position: relative;
 }
 
-nav .menu-item {
-  color: #fff;
-  padding: 10px 20px;
-  text-align: center;
-  border-bottom: 3px solid transparent;
-  display: flex;
-  transition: 0.4s;
+.navig::after {
+    content: '';
+    display: table;
+    clear: both;
 }
 
-nav .menu-item.active,
-nav .menu-item:hover {
-    background-color: #444;
-    border-bottom-color: #FF5858;
+.navig .logo {
+    float: left;
+    width: 50px;
+    border-style: outset;
 }
 
-nav .menu-item #item{
-  color: inherit;
+.navig nav {
+  float: right;
+}
+
+.navig nav ul {
+  margin: 100px;
+  padding: 10px;
+  list-style: none;
+}
+
+.navig nav li {
+  display: inline-block;
+  margin-right: 70px;
+  padding-top: 23px;
+  position: relative;
+}
+
+.lie {
+  color: #FFF;
   text-decoration: none;
+  text-transform: uppercase;
 }
+
+.navig .lie::before {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 100%;
+  background-color: #FFF;
+
+  position: absolute;
+  top: 9px;
+  width: 0%;
+  transition: all ease-in-out 400ms;
+}
+
+
+.lie:hover::before {
+  width:100%;
+}
+
 </style>

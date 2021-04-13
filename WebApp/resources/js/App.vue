@@ -1,39 +1,35 @@
 <template>
-  <header>
-    <Navbar />
-  </header>
-  <div id="app">
-    <router-view />
-  </div>
+    <header>
+        <Navbar />
+    </header>
+    <div id="app">
+        <router-view />
+    </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
 export default {
-  name: "app",
-  components: {
-    Navbar,
-  },
-  data() {
-    return {};
-  },
-}
+    name: "app",
+    components: {
+        Navbar,
+    },
+    data() {
+        return {};
+    },
+};
 </script>
 
 <style>
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "montserrat", sans-serif;
+    font-family: "montserrat", sans-serif;
 }
 
-header {
-  width: 100vw;
-  background-color: #222;
-  padding: 15px;
-}
+
 </style>
