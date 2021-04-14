@@ -3,9 +3,10 @@
         <img src="../../assets/navRick.jpg" alt="ricky" class="logo" />
         <nav>
             <li><router-link class="lie" to="/">Home</router-link></li>
+            <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
+            <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
             <li><router-link class="lie" to="/login">Login</router-link></li>
             <li><router-link class="lie" to="/register">Register</router-link></li>
-            <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
         </nav>
     </div>
 </template>
@@ -17,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .navig {
     width: 100vw;
     background-color: #222;
@@ -65,7 +66,7 @@ export default {
   display: block;
   height: 5px;
   width: 100%;
-  background-color: #FFF;
+  background-color: #feec2a;
 
   position: absolute;
   top: 9px;
