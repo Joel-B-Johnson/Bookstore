@@ -8,10 +8,10 @@
               <form action="#" @submit.prevent="handleLogin">
                 <h1>Log in Here</h1>
                 <div class="form-row">
-                  <input type="email" name="email" value="" class="form-control" v-model="formData.email" placeholder="Email Address">
+                  <input type="email" name="email" class="form-control" v-model="formData.email" placeholder="Email Address">
                 </div>
                 <div class="form-row">
-                  <input type="password" name="password" value="" class="form-control" v-model="formData.password" placeholder="Password">
+                  <input type="password" name="password" class="form-control" v-model="formData.password" placeholder="Password">
                 </div>
                 <div class="form-row">
                   <button type="submit" class="btn btn-primary">Log In</button>

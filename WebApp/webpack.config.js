@@ -1,6 +1,7 @@
 const path = require("path");
 const { VueLoaderPlugin } = require("vue-loader");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { webpack } = require("webpack");
 
 module.exports = (env = {}) => ({
   mode: env.prod ? "production" : "development",
@@ -51,6 +52,10 @@ module.exports = (env = {}) => ({
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css"
+    }),
+    new webpack.DefinePlugin({
+      __VUE_OPTIONS_API__: true,
+      __VUE_PROD_DEVTOOLS__: true,
     })
   ],
   devServer: {
