@@ -49,12 +49,18 @@ export default {
 </script>
 
 <style>
+  h1 {
+    text-transform: Uppercase;
+    text-align: center;
+  }
   .form-row {
     margin-bottom: 8px;
   }
   .btn-primary {
-    background-color: #feec2a;
-    color: black;
-    border: 2px solid black;
+    background-color: #00a4ef;
+  }
+
+  .btn-primary:hover {
+    background-color: #00a4ef;
   }
 </style>

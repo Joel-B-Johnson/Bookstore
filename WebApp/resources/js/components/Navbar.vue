@@ -51,12 +51,11 @@ export default {
 .navig nav li {
   display: inline-block;
   margin-right: 70px;
-  padding-top: 23px;
+  padding-top: 13px;
   position: relative;
 }
 
 .lie {
-  font-weight: bold;
   font-size: 20px;
   color: #FFF;
   text-decoration: none;
@@ -73,10 +72,10 @@ export default {
   display: block;
   height: 5px;
   width: 100%;
-  background-color: #feec2a;
+  background-color: #00a4ef;
 
   position: absolute;
-  top: 9px;
+  top: 11px;
   width: 0%;
   transition: all ease-in-out 400ms;
 }

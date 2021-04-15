@@ -21668,7 +21668,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".navig {\n  width: 100vw;\n  background-color: #222;\n  padding: 15px;\n  position: relative;\n}\n.navig::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n.navig .logo {\n  float: left;\n  width: 50px;\n  border-style: outset;\n}\n.navig nav {\n  float: right;\n}\n.navig nav ul {\n  margin: 100px;\n  padding: 10px;\n  list-style: none;\n}\n.navig nav li {\n  display: inline-block;\n  margin-right: 70px;\n  padding-top: 23px;\n  position: relative;\n}\n.lie {\n  font-weight: bold;\n  font-size: 20px;\n  color: #FFF;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n.navig .lie:hover {\n  text-decoration: none;\n  color: #FFF;\n}\n.navig .lie::before {\n  content: \"\";\n  display: block;\n  height: 5px;\n  width: 100%;\n  background-color: #feec2a;\n  position: absolute;\n  top: 9px;\n  width: 0%;\n  transition: all ease-in-out 400ms;\n}\n.lie:hover::before {\n  width: 100%;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".navig {\n  width: 100vw;\n  background-color: #222;\n  padding: 15px;\n  position: relative;\n}\n.navig::after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n.navig .logo {\n  float: left;\n  width: 50px;\n  border-style: outset;\n}\n.navig nav {\n  float: right;\n}\n.navig nav ul {\n  margin: 100px;\n  padding: 10px;\n  list-style: none;\n}\n.navig nav li {\n  display: inline-block;\n  margin-right: 70px;\n  padding-top: 13px;\n  position: relative;\n}\n.lie {\n  font-size: 20px;\n  color: #FFF;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n.navig .lie:hover {\n  text-decoration: none;\n  color: #FFF;\n}\n.navig .lie::before {\n  content: \"\";\n  display: block;\n  height: 5px;\n  width: 100%;\n  background-color: #00a4ef;\n  position: absolute;\n  top: 11px;\n  width: 0%;\n  transition: all ease-in-out 400ms;\n}\n.lie:hover::before {\n  width: 100%;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21692,7 +21692,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\nbody {\n    font-family: \"montserrat\", sans-serif;\n    background-color: #828282;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21740,7 +21740,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.form-row {\n    margin-bottom: 8px;\n}\n.btn-primary {\n    background-color: #feec2a;\n    color: black;\n    border: 2px solid black;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nh1 {\n    text-transform: Uppercase;\n    text-align: center;\n}\n.form-row {\n    margin-bottom: 8px;\n}\n.btn-primary {\n    background-color: #00a4ef;\n}\n.btn-primary:hover {\n    background-color: #00a4ef;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

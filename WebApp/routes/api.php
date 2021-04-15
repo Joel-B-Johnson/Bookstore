@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 //Public routes
 Route::post('/register', [AuthUserController::class, 'register']);
-//Route::post('/login', [])
+Route::post('/login', [AuthUserController::class, 'login']);
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/books/{id}', [BookController::class, 'show']);
 Route::get('/books/search/{title}', [BookController::class, 'search']);

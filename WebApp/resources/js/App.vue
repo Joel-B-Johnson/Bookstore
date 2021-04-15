@@ -27,8 +27,4 @@ export default {
     box-sizing: border-box;
 }
 
-body {
-    font-family: "montserrat", sans-serif;
-    background-color: #828282;
-}
 </style>
