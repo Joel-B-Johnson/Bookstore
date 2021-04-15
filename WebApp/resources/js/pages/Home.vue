@@ -18,7 +18,7 @@ export default {
 }
 </script>
 
-<style >
+<style lang="scss">
 .home img{
   width: 100%;
 }

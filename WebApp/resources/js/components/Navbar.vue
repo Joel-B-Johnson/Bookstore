@@ -35,7 +35,7 @@ export default {
 .navig .logo {
     float: left;
     width: 50px;
-    border-style: outset;
+    border: 2px solid #00a4ef;
 }
 
 .navig nav {
