@@ -52,4 +52,9 @@ export default {
   .form-row {
     margin-bottom: 8px;
   }
+  .btn-primary {
+    background-color: #feec2a;
+    color: black;
+    border: 2px solid black;
+  }
 </style>

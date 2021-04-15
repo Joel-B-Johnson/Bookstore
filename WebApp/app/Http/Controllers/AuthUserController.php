@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Hash;
 class AuthUserController extends Controller
 {
     //
-    public function register(Request $request) {
+    public function register(Request $request)
+    {
         $fields = $request->validate([
             'first_name' => 'required|string',
             'last_name' => 'required|string',
@@ -41,5 +42,9 @@ class AuthUserController extends Controller
         ];
 
         return response($responce, 201);
+    }
+
+    public function login(Request $request)
+    {
     }
 }

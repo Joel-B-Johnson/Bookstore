@@ -56,9 +56,16 @@ export default {
 }
 
 .lie {
+  font-weight: bold;
+  font-size: 20px;
   color: #FFF;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.navig .lie:hover{
+  text-decoration: none;
+  color: #FFF;
 }
 
 .navig .lie::before {
