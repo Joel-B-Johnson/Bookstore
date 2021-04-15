@@ -14,7 +14,8 @@
                   <input type="password" name="password" class="form-control" v-model="formData.password" placeholder="Password">
                 </div>
                 <div class="form-row">
-                  <button type="submit" class="btn btn-primary">Log In</button>
+                  <button type="submit" class="btn btn-primary btn-blok">Log In</button>
+                  <router-link tag="button" class="btn btn-primary btn-blok" to="/register">Register</router-link>
                 </div>
               </form>
             </div>
@@ -31,9 +32,6 @@ export default {
           password: ''
         }
       }
-    },
-    components: {
-
     },
     methods: {
       handleLogin() {
@@ -63,4 +61,12 @@ export default {
   .btn-primary:hover {
     background-color: #00a4ef;
   }
+
+  .btn-blok {
+    display: inline-block;
+    overflow: auto;
+    white-space: nowrap;
+    margin:0px auto;
+  }
+
 </style>
