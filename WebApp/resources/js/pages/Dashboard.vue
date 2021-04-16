@@ -5,10 +5,13 @@
     </head>
     <div id="body">
       <h1>dashboard</h1>
-      <form action="#" @submit.prevent="handleQuery"> 
-            <input type="text" id="query" v-model="formData.message" placeholder="enter SQL query" />
-            <button type="submit" class="btn-sql">Execute</button>
-      </form>
+      <p id="app"> Dashboard Uptime: {{ test }} </p>
+        <div>
+          <p> Retrieve Users on Record: </p>
+          <p> {{message}} </p>
+          <button v-on:click="getQueryUsers">Execute</button>
+        </div>
+      
     </div>
   </div>
 </template>
@@ -16,24 +19,22 @@
 <script>
 import Navbar from "../components/Navbar.vue";
 export default {
-  
-    data ()  {
-      return {
-        formData: {
-          message: ''
-        }
-      }
-    },
-    components: {
-      Navbar,
-    },
-    methods: {
-      handleQuery() {
-        axios.get('/pull').then(response => {
-         console.log(response.data)
-        })
-      }
-    },
+data() {
+  return {
+    test: 0,
+    message: ''
+  }
+},
+mounted() {
+  setInterval(() => {
+    this.test++
+  }, 1000)
+},
+methods: {
+  getQueryUsers() {
+    this.message = axios.get('/pull')
+  }
+}
 };
 </script>
 
