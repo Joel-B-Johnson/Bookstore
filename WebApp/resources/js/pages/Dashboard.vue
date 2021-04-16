@@ -4,22 +4,37 @@
       <title>Rickizon | Dashboard</title>
     </head>
     <div id="body">
-      <h1>This is the dashboard</h1>
-      <form action="ambassador.php" method="post"> 
-            <input id="query" v-model="message" placeholder="enter SQL query" />
-            <button type="submit">Submit</button>
+      <h1>dashboard</h1>
+      <form action="#" @submit.prevent="handleQuery"> 
+            <input type="text" id="query" v-model="formData.message" placeholder="enter SQL query" />
+            <button type="submit" class="btn-sql">Execute</button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-// import '../sass/dashboard.scss'
-//  export default {
-//   name: 'Dashboard',
-//   components: {
-
-//   }
+import Navbar from "../components/Navbar.vue";
+export default {
+  
+    data ()  {
+      return {
+        formData: {
+          message: ''
+        }
+      }
+    },
+    components: {
+      Navbar,
+    },
+    methods: {
+      handleQuery() {
+        axios.get('/pull').then(response => {
+         console.log(response.data)
+        })
+      }
+    },
+};
 </script>
 
 <style scoped>

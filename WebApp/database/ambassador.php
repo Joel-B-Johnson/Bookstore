@@ -11,7 +11,7 @@ class Ambassador extends Controller
   
    public function test()
    {
-      return DB::select('select * from User')
+      return DB::select('select * from User');
       
    }
   
