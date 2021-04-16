@@ -2,14 +2,54 @@
 <head>
   <title>Rickizon | Register</title>
 </head>
-  <div>
-      <h1>Register Here</h1>
+  <div class="container">
+    <div class="row mt-4">
+            <div class="col-6 offset-3">
+              <form action="#" @submit.prevent="handleRegister">
+                <h1>Register Here</h1>
+                <div class="form-row">
+                  <input type="first_name" name="first_name" class="form-control" v-model="formData.first_name" placeholder="First Name">
+                </div>
+                <div class="form-row">
+                  <input type="last_name" name="last_name" class="form-control" v-model="formData.last_name" placeholder="Last Name">
+                </div>
+                <div class="form-row">
+                  <input type="username" name="username" class="form-control" v-model="formData.username" placeholder="User Name">
+                </div>
+                <div class="form-row">
+                  <input type="email" name="email" class="form-control" v-model="formData.email" placeholder="Email Address">
+                </div>
+                <div class="form-row">
+                  <input type="password" name="password" class="form-control" v-model="formData.password" placeholder="Password">
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary btn-blok">Log In</button>
+                  <router-link tag="button" class="btn btn-primary btn-blok" to="/register">Register</router-link>
+                </div>
+              </form>
+            </div>
+        </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      formData: {
+          first_name: '',
+          last_name: '',
+          username: '',
+          email: '',
+          password: '',
+          confirmation: '',
+        }
+    }
+  },
+  methods: {
+    handleRegister() {
+      },
+  },
 }
 </script>
 
