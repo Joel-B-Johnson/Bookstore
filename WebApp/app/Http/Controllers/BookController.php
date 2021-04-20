@@ -18,6 +18,11 @@ class BookController extends Controller
         return Book::all();
     }
 
+    public function addnb()
+    {
+        
+    }
+
     /**
      * Store a newly created resource in storage.
      *

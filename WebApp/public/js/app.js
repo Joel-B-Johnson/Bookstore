@@ -16669,7 +16669,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       test: 0,
-      message: ''
+      message: '',
+      testicle: ''
     };
   },
   mounted: function mounted() {
@@ -16681,7 +16682,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getQueryUsers: function getQueryUsers() {
-      this.message = axios.get('/pull');
+      var _this2 = this;
+
+      axios.get('/pull').then(function (response) {
+        _this2.message = response.data;
+      });
+    },
+    submitNewBook: function submitNewBook() {
+      axios.post('/newBook', this.formData).then(this.testicle = 'book posted to database');
     }
   }
 });
@@ -16979,7 +16987,33 @@ var _hoisted_5 = {
   id: "app"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, " Retrieve Users on Record: ", -1
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, " Retrieve Users on Record: ", -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_10 = {
+  action: "#"
+};
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<p data-v-82704d4a>Add a new book to the database</p><input type=\"text\" placeholder=\"Book Name\" id=\"formData.bname\" data-v-82704d4a><input type=\"text\" placeholder=\"Book Image\" id=\"formData.ImageLink\" data-v-82704d4a><input type=\"text\" placeholder=\"Book Publisher\" id=\"formData.bpublisher\" data-v-82704d4a><input type=\"text\" placeholder=\"Book Author\" id=\"formData.bauthor\" data-v-82704d4a><input type=\"text\" placeholder=\"ISBN\" id=\"formData.bISBN\" data-v-82704d4a><input type=\"text\" placeholder=\"Price\" id=\"formData.bPrice\" data-v-82704d4a><input type=\"number\" placeholder=\"Starting Stock amount INT\" id=\"formData.bSSA\" data-v-82704d4a>", 8);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
@@ -16988,13 +17022,19 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_5, " Dashboard Uptime: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.test), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message), 1
+  ), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.message), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.getQueryUsers && $options.getQueryUsers.apply($options, arguments);
     })
-  }, "Execute")])])]);
+  }, "Execute")]), _hoisted_8, _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.submitNewBook && $options.submitNewBook.apply($options, arguments);
+    })
+  }, "Execute")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.testicle), 1
+  /* TEXT */
+  )]), _hoisted_19, _hoisted_20])]);
 });
 
 /***/ }),

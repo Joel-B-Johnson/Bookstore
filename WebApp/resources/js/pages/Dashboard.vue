@@ -6,22 +6,28 @@
     <div id="body">
       <h1>dashboard</h1>
       <p id="app"> Dashboard Uptime: {{ test }} </p>
+      <hr>
         <div>
           <p> Retrieve Users on Record: </p>
           <p> {{message}} </p>
           <button v-on:click="getQueryUsers">Execute</button>
         </div>
+        <br><hr>
         <div>
+          <form action="#">
             <p>Add a new book to the database</p>
-            <input type="text" placeholder="Book Name" v-model="formData.bname">
-            <input type="text" placeholder="Book Image" v-model="formData.ImageLink">
-            <input type="text" placeholder="Book Publisher" v-model="formData.bpublisher">
-            <input type="text" placeholder="Book Author" v-model="formData.bauthor">
-            <input type="text" placeholder="ISBN" v-model="formData.bISBN">
-            <input type="text" placeholder="Price" v-model="formData.bPrice">
-            <input type="number" placeholder="Starting Stock amount (INT)" v-model="formData.bSSA">
+            <input type="text" placeholder="Book Name" id="formData.bname">
+            <input type="text" placeholder="Book Image" id="formData.ImageLink">
+            <input type="text" placeholder="Book Publisher" id="formData.bpublisher">
+            <input type="text" placeholder="Book Author" id="formData.bauthor">
+            <input type="text" placeholder="ISBN" id="formData.bISBN">
+            <input type="text" placeholder="Price" id="formData.bPrice">
+            <input type="number" placeholder="Starting Stock amount INT" id="formData.bSSA">
             <button v-on:click="submitNewBook">Execute</button>
+          </form>
+          <p> {{ testicle }} </p>
         </div>
+        <br><hr>
     </div>
   </div>
 </template>
@@ -32,7 +38,8 @@ export default {
 data() {
   return {
     test: 0,
-    message: ''
+    message: '',
+    testicle: ''
   }
 },
 mounted() {
@@ -42,10 +49,10 @@ mounted() {
 },
 methods: {
   getQueryUsers() {
-    this.message = axios.get('/pull')
+    axios.get('/pull').then(response => { this.message = response.data })
   },
   submitNewBook() {
-    axios.post('/newBook', this.formData).then(response => { console.log(response) })
+    axios.post('/newBook', this.formData).then( this.testicle = 'book posted to database' )
   }
 }
 };
