@@ -11,7 +11,17 @@
           <p> {{message}} </p>
           <button v-on:click="getQueryUsers">Execute</button>
         </div>
-      
+        <div>
+            <p>Add a new book to the database</p>
+            <input type="text" placeholder="Book Name" v-model="formData.bname">
+            <input type="text" placeholder="Book Image" v-model="formData.ImageLink">
+            <input type="text" placeholder="Book Publisher" v-model="formData.bpublisher">
+            <input type="text" placeholder="Book Author" v-model="formData.bauthor">
+            <input type="text" placeholder="ISBN" v-model="formData.bISBN">
+            <input type="text" placeholder="Price" v-model="formData.bPrice">
+            <input type="number" placeholder="Starting Stock amount (INT)" v-model="formData.bSSA">
+            <button v-on:click="submitNewBook">Execute</button>
+        </div>
     </div>
   </div>
 </template>
@@ -33,6 +43,9 @@ mounted() {
 methods: {
   getQueryUsers() {
     this.message = axios.get('/pull')
+  },
+  submitNewBook() {
+    axios.post('/newBook', this.formData).then(response => { console.log(response) })
   }
 }
 };
