@@ -10,7 +10,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $response = User::find(1);
+        $response = User::all();
         return response($response, 201);
     }
 

@@ -16,13 +16,13 @@
         <div>
           <form action="#">
             <p>Add a new book to the database</p>
-            <input type="text" placeholder="Book Name" id="formData.bname">
-            <input type="text" placeholder="Book Image" id="formData.ImageLink">
-            <input type="text" placeholder="Book Publisher" id="formData.bpublisher">
-            <input type="text" placeholder="Book Author" id="formData.bauthor">
-            <input type="text" placeholder="ISBN" id="formData.bISBN">
-            <input type="text" placeholder="Price" id="formData.bPrice">
-            <input type="number" placeholder="Starting Stock amount INT" id="formData.bSSA">
+            <input type="text" placeholder="Book Name" v-model="formData.title">
+            <input type="text" placeholder="Book Image" v-model="formData.book_image">
+            <input type="text" placeholder="Book Publisher" v-model="formData.publisher">
+            <input type="text" placeholder="Book Author" v-model="formData.author">
+            <input type="text" placeholder="ISBN" v-model="formData.isbn">
+            <input type="text" placeholder="Price" v-model="formData.price">
+            <input type="number" placeholder="Starting Stock amount INT" v-model="formData.stock">
             <button v-on:click="submitNewBook">Execute</button>
           </form>
           <p> {{ testicle }} </p>
@@ -37,6 +37,15 @@ import Navbar from "../components/Navbar.vue";
 export default {
 data() {
   return {
+    formData: {
+      title: '',
+      book_image: '',
+      publisher: '',
+      author: '',
+      isbn: '',
+      price: '',
+      stock: ''
+    },
     test: 0,
     message: '',
     testicle: ''

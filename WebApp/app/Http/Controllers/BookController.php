@@ -18,9 +18,9 @@ class BookController extends Controller
         return Book::all();
     }
 
-    public function addnb()
+    public function newbook(Request $request)
     {
-        
+        return Book::create($request->all());
     }
 
     /**
