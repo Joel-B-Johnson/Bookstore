@@ -18,6 +18,11 @@ class BookController extends Controller
         return Book::all();
     }
 
+    public function newbook(Request $request)
+    {
+        return Book::create($request->all());
+    }
+
     /**
      * Store a newly created resource in storage.
      *

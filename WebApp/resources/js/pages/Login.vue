@@ -36,11 +36,12 @@ export default {
     methods: {
       handleLogin() {
         // send axios request
-        axios.get('/sanctum/csrf-cookie').then(response => {
-          axios.post('/login', this.formData).then(response => {
-            console.log(response)
-          })
+        axios.post('/login', this.formData).then(response => {
+          console.log(response)
+          //set if the thing works
         })
+        this.formData.email = ''
+        this.formData.password = ''
       }
     },
 };
