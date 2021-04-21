@@ -23,8 +23,10 @@
                   <input type="password" name="password" class="form-control" v-model="formData.password" placeholder="Password">
                 </div>
                 <div class="form-row">
-                  <button type="submit" class="btn btn-primary btn-blok">Log In</button>
-                  <router-link tag="button" class="btn btn-primary btn-blok" to="/register">Register</router-link>
+                  <input type="confirmation" name="confirmation" class="form-control" v-model="formData.confirmation" placeholder="Password Confirmation">
+                </div>
+                <div class="form-row">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
@@ -48,6 +50,9 @@ export default {
   },
   methods: {
     handleRegister() {
+      axios.post('/register', this.formData).then(response => {
+            console.log(response)
+          })
       },
   },
 }
