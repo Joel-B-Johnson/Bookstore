@@ -6,12 +6,28 @@
     <div id="body">
       <h1>dashboard</h1>
       <p id="app"> Dashboard Uptime: {{ test }} </p>
+      <hr>
         <div>
           <p> Retrieve Users on Record: </p>
           <p> {{message}} </p>
           <button v-on:click="getQueryUsers">Execute</button>
         </div>
-      
+        <br><hr>
+        <div>
+          <form action="#">
+            <p>Add a new book to the database</p>
+            <input type="text" placeholder="Book Name" v-model="formData.title">
+            <input type="text" placeholder="Book Image" v-model="formData.book_image">
+            <input type="text" placeholder="Book Publisher" v-model="formData.publisher">
+            <input type="text" placeholder="Book Author" v-model="formData.author">
+            <input type="text" placeholder="ISBN" v-model="formData.isbn">
+            <input type="text" placeholder="Price" v-model="formData.price">
+            <input type="number" placeholder="Starting Stock amount INT" v-model="formData.stock">
+            <button v-on:click="submitNewBook">Execute</button>
+          </form>
+          <p> {{ testicle }} </p>
+        </div>
+        <br><hr>
     </div>
   </div>
 </template>
@@ -21,8 +37,18 @@ import Navbar from "../components/Navbar.vue";
 export default {
 data() {
   return {
+    formData: {
+      title: '',
+      book_image: '',
+      publisher: '',
+      author: '',
+      isbn: '',
+      price: '',
+      stock: ''
+    },
     test: 0,
-    message: ''
+    message: '',
+    testicle: ''
   }
 },
 mounted() {
@@ -32,7 +58,10 @@ mounted() {
 },
 methods: {
   getQueryUsers() {
-    this.message = axios.get('/pull')
+    axios.get('/pull').then(response => { this.message = response.data })
+  },
+  submitNewBook() {
+    axios.post('/newBook', this.formData).then( this.testicle = 'book posted to database' )
   }
 }
 };
