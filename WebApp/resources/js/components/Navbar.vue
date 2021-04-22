@@ -6,7 +6,7 @@
             <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
             <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
             <li><router-link class="lie" to="/login">Login</router-link></li>
-            <li><button type="submit" class="btn btn-primary">Log out</button></li>
+            <li><button action="#" @submit.prevent="handleLogout" type="submit" class="btn btn-primary">Log out</button></li>
         </nav>
     </div>
 </template>

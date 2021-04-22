@@ -39,7 +39,17 @@ export default {
         axios.post('/login', this.formData).then(response => {
           console.log(response)
           //set if the thing works
-        })
+        }).catch(function (error) {
+                    if (error.response) {
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        console.log(error.request);
+                    } else {
+                        console.log("Error", error.message);
+                    }
+                })
         this.$router.push('/')
       }
     },

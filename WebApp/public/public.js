@@ -16751,6 +16751,16 @@ __webpack_require__.r(__webpack_exports__);
       // send axios request
       axios.post('/login', this.formData).then(function (response) {
         console.log(response); //set if the thing works
+      })["catch"](function (error) {
+        if (error.response) {
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          console.log(error.request);
+        } else {
+          console.log("Error", error.message);
+        }
       });
       this.$router.push('/');
     }
@@ -16789,14 +16799,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleRegister: function handleRegister() {
       axios.post("/register", this.formData).then(function (response) {
-        console.log(response);
+        console.log(response); //set if the thing works
       })["catch"](function (error) {
         if (error.response) {
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
         } else if (error.request) {
-          console.log(erorr.request);
+          console.log(error.request);
         } else {
           console.log("Error", error.message);
         }
@@ -16871,13 +16881,6 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  type: "submit",
-  "class": "btn btn-primary"
-}, "Log out")], -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
@@ -16921,7 +16924,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  })]), _hoisted_7])]);
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    action: "#",
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.handleLogout && _ctx.handleLogout.apply(_ctx, arguments);
+    }, ["prevent"])),
+    type: "submit",
+    "class": "btn btn-primary"
+  }, "Log out", 32
+  /* HYDRATE_EVENTS */
+  )])])]);
 }
 
 /***/ }),

@@ -104,6 +104,7 @@ export default {
                 .post("/register", this.formData)
                 .then((response) => {
                     console.log(response);
+                    //set if the thing works
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -111,7 +112,7 @@ export default {
                         console.log(error.response.status);
                         console.log(error.response.headers);
                     } else if (error.request) {
-                        console.log(erorr.request);
+                        console.log(error.request);
                     } else {
                         console.log("Error", error.message);
                     }
