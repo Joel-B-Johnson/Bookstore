@@ -16611,8 +16611,12 @@ __webpack_require__.r(__webpack_exports__);
   components: {},
   methods: {
     logout: function logout() {
-      axios.post('/logout').then(function () {
-        return location.href = '/';
+      var _this = this;
+
+      axios.post('/logout').then(function (response) {
+        console.log(response);
+
+        _this.$router.push("/");
       });
     }
   }
@@ -16798,8 +16802,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     handleRegister: function handleRegister() {
+      var _this = this;
+
       axios.post("/register", this.formData).then(function (response) {
         console.log(response); //set if the thing works
+
+        _this.$router.push("/");
       })["catch"](function (error) {
         if (error.response) {
           console.log(error.response.data);
@@ -16811,7 +16819,6 @@ __webpack_require__.r(__webpack_exports__);
           console.log("Error", error.message);
         }
       });
-      this.$router.push("/");
     }
   }
 });
@@ -16925,15 +16932,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    action: "#",
-    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
-      return _ctx.handleLogout && _ctx.handleLogout.apply(_ctx, arguments);
-    }, ["prevent"])),
-    type: "submit",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.logout && $options.logout.apply($options, arguments);
+    }),
     "class": "btn btn-primary"
-  }, "Log out", 32
-  /* HYDRATE_EVENTS */
-  )])])]);
+  }, "Log out")])])]);
 }
 
 /***/ }),

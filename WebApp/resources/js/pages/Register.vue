@@ -105,6 +105,7 @@ export default {
                 .then((response) => {
                     console.log(response);
                     //set if the thing works
+                    this.$router.push("/");
                 })
                 .catch(function (error) {
                     if (error.response) {
@@ -117,7 +118,6 @@ export default {
                         console.log("Error", error.message);
                     }
                 });
-            this.$router.push("/");
         },
     },
 };

@@ -6,7 +6,7 @@
             <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
             <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
             <li><router-link class="lie" to="/login">Login</router-link></li>
-            <li><button action="#" @submit.prevent="handleLogout" type="submit" class="btn btn-primary">Log out</button></li>
+            <li><button v-on:click="logout" class="btn btn-primary">Log out</button></li>
         </nav>
     </div>
 </template>
@@ -17,7 +17,11 @@ export default {
     components: {},
     methods: {
       logout() {
-        axios.post('/logout').then(() => location.href = '/')
+        axios.post('/logout')
+        .then((response) => {
+                    console.log(response)
+                    this.$router.push("/");
+                })
       }
     }
 };

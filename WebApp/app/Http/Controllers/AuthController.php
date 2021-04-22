@@ -16,7 +16,7 @@ class AuthController extends Controller
             'first_name' => 'required|string',
             'last_name' => 'required|string',
             'username' => 'required|string|unique:users,username',
-            'email' => 'required|string|unique:users,email',
+            'email' => 'required|email|unique:users,email',
             'phone' => 'required|string',
             'password' => 'required|string|confirmed',
             'admin' => 'required|boolean',
@@ -77,4 +77,4 @@ class AuthController extends Controller
             'msg' => 'Logged out Successfully.'
         ], 200);
     }
-}
+ }
