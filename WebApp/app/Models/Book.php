@@ -16,4 +16,6 @@ class Book extends Model
     protected $hidden = [
         'id'
     ];
+
+    public $timestamps = false;
 }
