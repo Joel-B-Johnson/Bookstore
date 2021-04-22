@@ -40,8 +40,7 @@ export default {
           console.log(response)
           //set if the thing works
         })
-        this.formData.email = ''
-        this.formData.password = ''
+        this.$router.push('/')
       }
     },
 };
