@@ -1,10 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router"
 import Home from '../pages/Home.vue'
-import Admin from '../pages/Admin.vue'
+import Account from '../pages/Account.vue'
 import Login from '../pages/Login.vue'
 import Dashboard from '../pages/Dashboard.vue'
 import Register from '../pages/Register.vue'
 import Cart from '../pages/Cart.vue'
+import Orders from '../pages/Orders.vue'
 
 const routes = [
   {
@@ -18,9 +19,9 @@ const routes = [
     component: Cart,
   },
   {
-    path: '/admin',
-    name: 'Admin',
-    component: Admin,
+    path: '/account',
+    name: 'Account',
+    component: Account,
   },
   {
     path: '/login',
@@ -36,6 +37,11 @@ const routes = [
     path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
+  },
+  {
+    path: '/orders',
+    name: 'Orders',
+    component: Orders
   },
 ];
 

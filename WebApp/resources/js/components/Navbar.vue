@@ -4,7 +4,9 @@
         <nav>
             <li><router-link class="lie" to="/">Home</router-link></li>
             <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
+            <li><router-link class="lie" to="/orders">Orders</router-link></li>
             <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
+            <li><router-link class="lie" to="/account">Account</router-link></li>
             <li><router-link class="lie" to="/login">Login</router-link></li>
             <li><button v-on:click="logout" class="btn btn-primary">Log out</button></li>
         </nav>

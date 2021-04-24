@@ -1,15 +1,15 @@
 <template>
     <div>
         <head>
-            <title>Rickizon | Admin</title>
+            <title>Rickizon | Orders</title>
         </head>
-        <h1>Admin Page</h1>
+        <h1>Account Page</h1>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Admin',
+    name: 'Orders',
 }
 </script>
 
