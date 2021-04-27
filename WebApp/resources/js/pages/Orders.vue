@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    name: 'Admin',
+    name: 'Orders',
 }
 </script>
 
