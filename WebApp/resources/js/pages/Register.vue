@@ -14,6 +14,7 @@
                             class="form-control"
                             v-model="formData.first_name"
                             placeholder="First Name"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -23,6 +24,7 @@
                             class="form-control"
                             v-model="formData.last_name"
                             placeholder="Last Name"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -32,6 +34,7 @@
                             class="form-control"
                             v-model="formData.username"
                             placeholder="User Name"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -41,6 +44,7 @@
                             class="form-control"
                             v-model="formData.email"
                             placeholder="Email Address"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -50,6 +54,7 @@
                             class="form-control"
                             v-model="formData.phone"
                             placeholder="Phone"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -59,15 +64,18 @@
                             class="form-control"
                             v-model="formData.password"
                             placeholder="Password"
+                            required
                         />
                     </div>
+                    <div id="passError">Passwords Do Not Match.</div>
                     <div class="form-row">
                         <input
-                            type="password_confirmation"
+                            type="password"
                             name="password_confirmation"
                             class="form-control"
                             v-model="formData.password_confirmation"
                             placeholder="Confirm Password"
+                            required
                         />
                     </div>
                     <div class="form-row">
@@ -82,6 +90,7 @@
 </template>
 
 <script>
+import App from "../App.vue";
 export default {
     data() {
         return {
@@ -99,15 +108,52 @@ export default {
         };
     },
     methods: {
+        validate() {
+            let thruth = true;
+            if (this.formData.password != this.formData.password_confirmation) {
+                documnet.getElementById("passError").style.display="block";
+                thruth = false;
+            }
+
+        },
         handleRegister() {
-            axios({
-                method: 'post',
-                url: 'api/register',
-                data: this.formData
-            })
+            axios({ method: 'post', url: 'api/register', data: this.formData })
+            .then((response) => {
+                    //set if the thing works
+                    console.log(response);
+                    // this.userData.first_name = response.first_name;
+                    // this.userData.last_name = response.last_name;
+                    // this.userData.username = response.username;
+                    // this.userData.email = response.email;
+                    // this.userData.phone = response.phone;
+                    // this.userData.admin = response.admin;
+                    document.getElementById("logOut").style.display="block";
+                    document.getElementById("login").style.display="none";
+                    this.$router.push("/");
+                })
+                .catch(function (error) {
+                    if (error.response) {
+                        document.getElementById("loginError").style.display="block";
+                        console.log(error.response.data);
+                        console.log(error.response.status);
+                        console.log(error.response.headers);
+                    } else if (error.request) {
+                        console.log(error.request);
+                    } else {
+                        console.log("Error", error.message);
+                    }
+                });
         },
     },
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#passError {
+    display: none;
+    font-size: 25px;
+    text-align: center;
+    color: red;
+    weight: bold;
+}
+</style>

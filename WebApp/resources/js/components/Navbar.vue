@@ -7,13 +7,14 @@
             <li><router-link class="lie" to="/orders">Orders</router-link></li>
             <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
             <li><router-link class="lie" to="/account">Account</router-link></li>
-            <li><router-link class="lie" to="/login">Login</router-link></li>
-            <li><button v-on:click="logout" class="btn btn-primary">Log out</button></li>
+            <li><router-link id="login" class="lie" to="/login">Login</router-link></li>
+            <li><button v-on:click="logout" id="logOut" class="btn btn-primary">Log out</button></li>
         </nav>
     </div>
 </template>
 
 <script>
+import App from "../App.vue";
 export default {
     name: "navbar",
     components: {},
@@ -30,6 +31,13 @@ export default {
 </script>
 
 <style lang="scss">
+#logOut {
+    display: none;
+}
+
+#login {
+  display: block;
+}
 .navig {
     width: 100vw;
     background-color: #222;

@@ -16,13 +16,13 @@
         <div>
           <form action="#">
             <p>Add a new book to the database</p>
-            <input type="text" placeholder="Book Name" v-model="formData.title">
-            <input type="text" placeholder="Book Image" v-model="formData.book_image">
-            <input type="text" placeholder="Book Publisher" v-model="formData.publisher">
-            <input type="text" placeholder="Book Author" v-model="formData.author">
-            <input type="text" placeholder="ISBN" v-model="formData.isbn">
-            <input type="text" placeholder="Price" v-model="formData.price">
-            <input type="number" placeholder="Starting Stock amount INT" v-model="formData.stock">
+            <input type="text" placeholder="Book Name" v-model="formData.title" required>
+            <input type="text" placeholder="Book Image" v-model="formData.book_image" required>
+            <input type="text" placeholder="Book Publisher" v-model="formData.publisher" required>
+            <input type="text" placeholder="Book Author" v-model="formData.author" required>
+            <input type="text" placeholder="ISBN" v-model="formData.isbn" required>
+            <input type="text" placeholder="Price" v-model="formData.price" required>
+            <input type="number" placeholder="Starting Stock amount INT" v-model="formData.stock" required>
             <button v-on:click="submitNewBook">Execute</button>
           </form>
           <p> {{ testicle }} </p>
