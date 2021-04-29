@@ -19,7 +19,7 @@ export default {
     components: {},
     methods: {
       logout() {
-        axios.post('/logout')
+        axios.post('api/logout')
         .then((response) => {
                     console.log(response)
                     this.$router.push("/");

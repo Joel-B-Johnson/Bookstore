@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row mt-4">
             <div class="col-6 offset-3">
+              <h2 class="errormes" v-show="errorMessage">Username/Password Incorrect</h2>
               <form action="#" @submit.prevent="handleLogin">
                 <h1>Log in Here</h1>
                 <div class="form-row">
@@ -30,27 +31,29 @@ export default {
         formData: {
           email: '',
           password: ''
-        }
+        },
+        errorMessage: false,
       }
     },
     methods: {
       handleLogin() {
         // send axios request
         axios.post('api/login', this.formData).then(response => {
-          console.log(response)
           //set if the thing works
+          console.log(response)
+          this.$router.push('/')
         }).catch(function (error) {
-                    if (error.response) {
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
-                    } else if (error.request) {
-                        console.log(error.request);
-                    } else {
-                        console.log("Error", error.message);
-                    }
-                })
-        this.$router.push('/')
+          if (error.response) {
+              this.errorMessage = !this.errorMessage;
+              console.log(error.response.data);
+              console.log(error.response.status);
+              console.log(error.response.headers);
+          } else if (error.request) {
+              console.log(error.request);
+          } else {
+              console.log("Error", error.message);
+          }
+      })
       }
     },
 };

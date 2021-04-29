@@ -16613,7 +16613,7 @@ __webpack_require__.r(__webpack_exports__);
     logout: function logout() {
       var _this = this;
 
-      axios.post('/logout').then(function (response) {
+      axios.post('api/logout').then(function (response) {
         console.log(response);
 
         _this.$router.push("/");
@@ -16683,7 +16683,8 @@ __webpack_require__.r(__webpack_exports__);
       },
       test: 0,
       message: '',
-      testicle: ''
+      testicle: '',
+      bookID: ''
     };
   },
   mounted: function mounted() {
@@ -16697,12 +16698,15 @@ __webpack_require__.r(__webpack_exports__);
     getQueryUsers: function getQueryUsers() {
       var _this2 = this;
 
-      axios.get('/pull').then(function (response) {
+      axios.get('api/pull').then(function (response) {
         _this2.message = response.data;
       });
     },
     submitNewBook: function submitNewBook() {
       axios.post('api/newBook', this.formData).then(this.testicle = 'book posted to database');
+    },
+    deleteBook: function deleteBook() {
+      axios["delete"]('api/deleteBook', this.bookID);
     }
   }
 });
@@ -16747,16 +16751,23 @@ __webpack_require__.r(__webpack_exports__);
       formData: {
         email: '',
         password: ''
-      }
+      },
+      errorMessage: false
     };
   },
   methods: {
     handleLogin: function handleLogin() {
+      var _this = this;
+
       // send axios request
       axios.post('api/login', this.formData).then(function (response) {
-        console.log(response); //set if the thing works
+        //set if the thing works
+        console.log(response);
+
+        _this.$router.push('/');
       })["catch"](function (error) {
         if (error.response) {
+          this.errorMessage = !this.errorMessage;
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);
@@ -16766,7 +16777,6 @@ __webpack_require__.r(__webpack_exports__);
           console.log("Error", error.message);
         }
       });
-      this.$router.push('/');
     }
   }
 });
@@ -17081,11 +17091,21 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+var _hoisted_12 = {
+  action: "#"
+};
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  "for": "bookid"
+}, null, -1
 /* HOISTED */
 );
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
@@ -17162,7 +17182,20 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     })
   }, "Execute")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.testicle), 1
   /* TEXT */
-  )]), _hoisted_12, _hoisted_13])]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+    type: "bookid",
+    name: "bookid",
+    placeholder: "Book ID",
+    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+      return $data.bookID = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.bookID]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[11] || (_cache[11] = function () {
+      return $options.deleteBook && $options.deleteBook.apply($options, arguments);
+    })
+  }, "Execute")])]), _hoisted_14, _hoisted_15])]);
 });
 
 /***/ }),
@@ -17231,39 +17264,44 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "col-6 offset-3"
 };
+var _hoisted_5 = {
+  "class": "errormes"
+};
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Log in Here", -1
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Log in Here", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = {
-  "class": "form-row"
-};
 var _hoisted_7 = {
   "class": "form-row"
 };
 var _hoisted_8 = {
   "class": "form-row"
 };
+var _hoisted_9 = {
+  "class": "form-row"
+};
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
   type: "submit",
   "class": "btn btn-primary btn-blok"
 }, "Log In", -1
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", _hoisted_5, "Username/Password Incorrect", 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.errorMessage]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     action: "#",
     onSubmit: _cache[3] || (_cache[3] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.handleLogin && $options.handleLogin.apply($options, arguments);
     }, ["prevent"]))
-  }, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  }, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "email",
     name: "email",
     "class": "form-control",
@@ -17273,7 +17311,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Email Address"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.formData.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.formData.email]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "password",
     name: "password",
     "class": "form-control",
@@ -17283,13 +17321,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     placeholder: "Password"
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.formData.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_8, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.formData.password]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     tag: "button",
     "class": "btn btn-primary btn-blok",
     to: "/register"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_10];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */

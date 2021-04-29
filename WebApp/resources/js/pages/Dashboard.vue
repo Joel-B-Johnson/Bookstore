@@ -26,6 +26,12 @@
             <button v-on:click="submitNewBook">Execute</button>
           </form>
           <p> {{ testicle }} </p>
+
+          <form action="#">
+            <label for="bookid"></label>
+            <input type="bookid" name="bookid" placeholder="Book ID" v-model="bookID">
+            <button v-on:click="deleteBook">Execute</button>
+          </form>
         </div>
         <br><hr>
     </div>
@@ -48,7 +54,8 @@ data() {
     },
     test: 0,
     message: '',
-    testicle: ''
+    testicle: '',
+    bookID: '',
   }
 },
 mounted() {
@@ -58,10 +65,13 @@ mounted() {
 },
 methods: {
   getQueryUsers() {
-    axios.get('/pull').then(response => { this.message = response.data })
+    axios.get('api/pull').then(response => { this.message = response.data })
   },
   submitNewBook() {
     axios.post('api/newBook', this.formData).then( this.testicle = 'book posted to database' )
+  },
+  deleteBook() {
+    axios.delete('api/deleteBook', this.bookID)
   }
 }
 };
