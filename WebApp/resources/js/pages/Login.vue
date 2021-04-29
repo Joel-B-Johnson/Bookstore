@@ -36,7 +36,7 @@ export default {
     methods: {
       handleLogin() {
         // send axios request
-        axios.post('/login', this.formData).then(response => {
+        axios.post('api/login', this.formData).then(response => {
           console.log(response)
           //set if the thing works
         }).catch(function (error) {

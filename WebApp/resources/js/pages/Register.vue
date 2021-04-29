@@ -102,7 +102,7 @@ export default {
         handleRegister() {
             axios({
                 method: 'post',
-                url: '/register',
+                url: 'api/register',
                 data: this.formData
             })
         },

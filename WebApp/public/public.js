@@ -16702,7 +16702,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     submitNewBook: function submitNewBook() {
-      axios.post('/newBook', this.formData).then(this.testicle = 'book posted to database');
+      axios.post('api/newBook', this.formData).then(this.testicle = 'book posted to database');
     }
   }
 });
@@ -16753,7 +16753,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     handleLogin: function handleLogin() {
       // send axios request
-      axios.post('/login', this.formData).then(function (response) {
+      axios.post('api/login', this.formData).then(function (response) {
         console.log(response); //set if the thing works
       })["catch"](function (error) {
         if (error.response) {
@@ -16821,7 +16821,7 @@ __webpack_require__.r(__webpack_exports__);
     handleRegister: function handleRegister() {
       axios({
         method: 'post',
-        url: '/register',
+        url: 'api/register',
         data: this.formData
       });
     }

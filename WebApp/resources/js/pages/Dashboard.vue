@@ -61,7 +61,7 @@ methods: {
     axios.get('/pull').then(response => { this.message = response.data })
   },
   submitNewBook() {
-    axios.post('/newBook', this.formData).then( this.testicle = 'book posted to database' )
+    axios.post('api/newBook', this.formData).then( this.testicle = 'book posted to database' )
   }
 }
 };
