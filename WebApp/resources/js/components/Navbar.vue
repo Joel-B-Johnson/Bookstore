@@ -22,9 +22,18 @@ export default {
       logout() {
         axios.post('api/logout')
         .then((response) => {
-                    console.log(response)
-                    this.$router.push("/");
-                })
+            console.log(response)
+            this.$router.push("/");
+            localStorage.setItem("", response.data.user.first_name);
+            localStorage.setItem("", response.data.user.last_name);
+            localStorage.setItem("", response.data.user.username);
+            localStorage.setItem("", response.data.user.email);
+            localStorage.setItem("", response.data.user.phone);
+            localStorage.setItem("", response.data.user.admin);
+            localStorage.setItem("", response.data.user.token);
+            document.getElementById("logOut").style.display="none";
+            document.getElementById("login").style.display="block";
+        })
       }
     }
 };

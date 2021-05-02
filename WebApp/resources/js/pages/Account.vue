@@ -24,6 +24,8 @@ export default {
     data() {
         return {
             userInfo: true,
+            address: false,
+            payment: false,
         };
     },
     methods:{

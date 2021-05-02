@@ -16590,7 +16590,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {};
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
@@ -16619,6 +16620,16 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response);
 
         _this.$router.push("/");
+
+        localStorage.setItem("", response.data.user.first_name);
+        localStorage.setItem("", response.data.user.last_name);
+        localStorage.setItem("", response.data.user.username);
+        localStorage.setItem("", response.data.user.email);
+        localStorage.setItem("", response.data.user.phone);
+        localStorage.setItem("", response.data.user.admin);
+        localStorage.setItem("", response.data.user.token);
+        document.getElementById("logOut").style.display = "none";
+        document.getElementById("login").style.display = "block";
       });
     }
   }
@@ -16688,7 +16699,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      userInfo: true
+      userInfo: true,
+      address: false,
+      payment: false
     };
   },
   methods: {
