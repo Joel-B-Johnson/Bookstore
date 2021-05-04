@@ -3,7 +3,7 @@
         <title>Rickizon | Home</title>
     </head>
     <div class="home">
-    <img src='../../assets/homeBack.jpg' alt="rick">
+      <img src='../../assets/homeBack.jpg' alt="rick">
     </div>
 </template>
 
@@ -16,20 +16,18 @@ export default {
   },
   methods: {
     getAllBooks() {
-      let books = axios.get('api/books');
-      console.log(books.data);
+
     }
   },
   beforeMount() {
-    let beks = axios.get('api/books');
-    this.books = beks;
-    console.log(this.books);
+      axios.get('api/books')
+      .then(response => { this.books = response.data })
   },
 }
 </script>
 
 <style lang="scss">
-.home {
+.home img {
   width: 100%;
 }
 </style>
