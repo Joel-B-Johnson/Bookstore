@@ -9,6 +9,11 @@ class StateController extends Controller
 {
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        //Anything that is allowed to be created will be
         return State::create($request->all());
     }
 
