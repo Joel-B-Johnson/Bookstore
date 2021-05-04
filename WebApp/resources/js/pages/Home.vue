@@ -11,15 +11,24 @@
 export default {
   data() {
     return {
+      books: "",
     }
+  },
   methods: {
+    getAllBooks() {
+      let books = axios.get('api/books');
+      console.log(books.data);
     }
-  }
+  },
+  beforeMount() {
+    let books = axios.get('api/books');
+    console.log(books.data);
+  },
 }
 </script>
 
 <style lang="scss">
-.home img{
+.home {
   width: 100%;
 }
 </style>
