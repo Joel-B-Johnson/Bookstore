@@ -69,7 +69,7 @@ export default {
                     localStorage.setItem("email", response.data.user.email);
                     localStorage.setItem("phone", response.data.user.phone);
                     localStorage.setItem("admin", response.data.user.admin);
-                    localStorage.setItem("token", response.data.user.token);
+                    localStorage.setItem("token", response.data.token);
                     document.getElementById("loginError").style.display ="none";
                     document.getElementById("logOut").style.display="inline-block";
                     document.getElementById("login").style.display="none";
@@ -85,7 +85,6 @@ export default {
                 })
                 .catch(function (error) {
                     if (error.response) {
-                        document.getElementById("loginError").style.display ="block";
                         console.log(error.response.data);
                         console.log(error.response.status);
                         console.log(error.response.headers);

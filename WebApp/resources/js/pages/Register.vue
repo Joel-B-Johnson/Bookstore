@@ -119,7 +119,6 @@ export default {
         handleRegister() {
             axios({ method: 'post', url: 'api/register', data: this.formData })
             .then((response) => {
-                //set if the thing works
                 console.log(response);
                 localStorage.setItem("first_name", response.data.user.first_name);
                 localStorage.setItem("last_name", response.data.user.last_name);
@@ -127,7 +126,7 @@ export default {
                 localStorage.setItem("email", response.data.user.email);
                 localStorage.setItem("phone", response.data.user.phone);
                 localStorage.setItem("admin", response.data.user.admin);
-                localStorage.setItem("token", response.data.user.token);
+                localStorage.setItem("token", response.data.token);
                 document.getElementById("loginError").style.display ="none";
                 document.getElementById("logOut").style.display="inline-block";
                 document.getElementById("login").style.display="none";
@@ -139,19 +138,20 @@ export default {
                 } else {
                     document.getElementById("admin").style.display="inline-block";
                 }
-                })
-                .catch(function (error) {
-                    if (error.response) {
-                        document.getElementById("loginError").style.display="block";
-                        console.log(error.response.data);
-                        console.log(error.response.status);
-                        console.log(error.response.headers);
-                    } else if (error.request) {
-                        console.log(error.request);
-                    } else {
-                        console.log("Error", error.message);
-                    }
-                });
+                this.$router.push("/");
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    document.getElementById("loginError").style.display ="block";
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log("Error", error.message);
+                }
+            });
         },
     },
 };
