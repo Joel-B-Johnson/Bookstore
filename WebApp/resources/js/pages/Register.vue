@@ -119,17 +119,25 @@ export default {
         handleRegister() {
             axios({ method: 'post', url: 'api/register', data: this.formData })
             .then((response) => {
-                    //set if the thing works
-                    console.log(response);
-                    // this.userData.first_name = response.first_name;
-                    // this.userData.last_name = response.last_name;
-                    // this.userData.username = response.username;
-                    // this.userData.email = response.email;
-                    // this.userData.phone = response.phone;
-                    // this.userData.admin = response.admin;
-                    document.getElementById("logOut").style.display="block";
-                    document.getElementById("login").style.display="none";
-                    this.$router.push("/");
+                //set if the thing works
+                console.log(response);
+                localStorage.setItem("first_name", response.data.user.first_name);
+                localStorage.setItem("last_name", response.data.user.last_name);
+                localStorage.setItem("username", response.data.user.username);
+                localStorage.setItem("email", response.data.user.email);
+                localStorage.setItem("phone", response.data.user.phone);
+                localStorage.setItem("admin", response.data.user.admin);
+                localStorage.setItem("token", response.data.user.token);
+                document.getElementById("loginError").style.display ="none";
+                document.getElementById("logOut").style.display="inline-block";
+                document.getElementById("login").style.display="none";
+                document.getElementById("accounts").style.display="inline-block";
+                document.getElementById("shopping").style.display="inline-block";
+                if ((localStorage.getItem("admin")) != 1) {
+                    document.getElementById("admin").style.display="none";
+                } else {
+                    document.getElementById("admin").style.display="inline-block";
+                }
                 })
                 .catch(function (error) {
                     if (error.response) {

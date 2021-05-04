@@ -62,7 +62,6 @@ export default {
             axios
                 .post("api/login", this.formData)
                 .then((response) => {
-                    //set if the thing works
                     console.log(response);
                     localStorage.setItem("first_name", response.data.user.first_name);
                     localStorage.setItem("last_name", response.data.user.last_name);
@@ -72,8 +71,15 @@ export default {
                     localStorage.setItem("admin", response.data.user.admin);
                     localStorage.setItem("token", response.data.user.token);
                     document.getElementById("loginError").style.display ="none";
-                    document.getElementById("logOut").style.display="block";
+                    document.getElementById("logOut").style.display="inline-block";
                     document.getElementById("login").style.display="none";
+                    document.getElementById("accounts").style.display="inline-block";
+                    document.getElementById("shopping").style.display="inline-block";
+                    if ((localStorage.getItem("admin")) != 1) {
+                        document.getElementById("admin").style.display="none";
+                    } else {
+                        document.getElementById("admin").style.display="inline-block";
+                    }
                     this.$router.push("/");
                 })
                 .catch(function (error) {

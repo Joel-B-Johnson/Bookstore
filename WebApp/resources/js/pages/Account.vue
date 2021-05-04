@@ -6,20 +6,24 @@
         <div class="sidenav">
             <ul class="accountNav">
                 <li><button @click="userInfo = !userInfo">User</button></li>
+                <li><button @click="address = !address">Addresses</button></li>
             </ul>
         </div>
         <div class="mainVue">
             <UserInfo v-if="userInfo" />
+            <Address v-if="address" />
         </div>
     </div>
 </template>
 
 <script>
 import UserInfo from "../components/UserInfo.vue"
+import Address from "../components/Address.vue"
 export default {
     name: 'Account',
     components: {
         UserInfo,
+        Address,
     },
     data() {
         return {
@@ -30,7 +34,7 @@ export default {
     },
     methods:{
         displayUserInfo() {
-            console.log(localStorage.userData)
+            console.log("hello world")
         },
     },
     beforeMount(){

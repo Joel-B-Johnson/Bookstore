@@ -3,12 +3,12 @@
         <img src="../../assets/navRick.jpg" alt="ricky" class="logo" />
         <nav>
             <li><router-link class="lie" to="/">Home</router-link></li>
-            <li><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
-            <li><router-link class="lie" to="/orders">Orders</router-link></li>
-            <li><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
-            <li><router-link class="lie" to="/account">Account</router-link></li>
-            <li><router-link id="login" class="lie" to="/login">Login</router-link></li>
-            <li><button v-on:click="logout" id="logOut" class="btn btn-primary">Log out</button></li>
+            <li id="admin"><router-link class="lie" to="/dashboard">Dashboard</router-link></li>
+            <li id="orders"><router-link class="lie" to="/orders">Orders</router-link></li>
+            <li id="shopping"><router-link class="lie" to="/shoppingcart">Cart</router-link></li>
+            <li id="accounts"><router-link class="lie" to="/account">Account</router-link></li>
+            <li id="login"><router-link class="lie" to="/login">Login</router-link></li>
+            <li id="logOut"><button v-on:click="logout" class="btn btn-primary">Log out</button></li>
         </nav>
     </div>
 </template>
@@ -20,22 +20,22 @@ export default {
     components: {},
     methods: {
       logout() {
-        axios.post('api/logout')
-        .then((response) => {
-            console.log(response)
-            this.$router.push("/");
-            localStorage.setItem("", response.data.user.first_name);
-            localStorage.setItem("", response.data.user.last_name);
-            localStorage.setItem("", response.data.user.username);
-            localStorage.setItem("", response.data.user.email);
-            localStorage.setItem("", response.data.user.phone);
-            localStorage.setItem("", response.data.user.admin);
-            localStorage.setItem("", response.data.user.token);
-            document.getElementById("logOut").style.display="none";
-            document.getElementById("login").style.display="block";
-        })
-      }
-    }
+        this.$router.push("/");
+        localStorage.setItem("first_name", "");
+        localStorage.setItem("last_name", "");
+        localStorage.setItem("admin", "");
+        localStorage.setItem("username", "");
+        localStorage.setItem("email", "");
+        localStorage.setItem("token", "");
+        localStorage.setItem("phone", "");
+        document.getElementById("logOut").style.display="none";
+        document.getElementById("login").style.display="inline-block";
+        document.getElementById("accounts").style.display="none";
+        document.getElementById("shopping").style.display="none";
+        document.getElementById("admin").style.display="none";
+      },
+    },
+    
 };
 </script>
 
@@ -45,7 +45,19 @@ export default {
 }
 
 #login {
-  display: block;
+  display: inline-block;
+}
+#shopping {
+  display: none;
+}
+#admin {
+  display: none;
+}
+#orders {
+  display: none;
+}
+#accounts {
+  display: none;
 }
 .navig {
     width: 100vw;
