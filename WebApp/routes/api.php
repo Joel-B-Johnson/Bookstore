@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Route::get('/books/{id}', [BookController::class, 'show']);
 Route::get('/books/search/{title}', [BookController::class, 'search']);
 Route::get('/pull', [UserController::class, 'index']);
 Route::post('/newBook', [BookController::class, 'newbook']);
+Route::post('/newAddress', [AddressController::class, 'storeaddress']);
+Route::get('/getAddress', [AddressController::class, 'getaddress']);
 
 //Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {
