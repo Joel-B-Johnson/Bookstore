@@ -16846,8 +16846,9 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   beforeMount: function beforeMount() {
-    var books = axios.get('api/books');
-    console.log(books.data);
+    var beks = axios.get('api/books');
+    this.books = beks;
+    console.log(this.books);
   }
 });
 

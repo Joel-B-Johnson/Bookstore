@@ -21,8 +21,9 @@ export default {
     }
   },
   beforeMount() {
-    let books = axios.get('api/books');
-    console.log(books.data);
+    let beks = axios.get('api/books');
+    this.books = beks;
+    console.log(this.books);
   },
 }
 </script>
