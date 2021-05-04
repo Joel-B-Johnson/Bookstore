@@ -10,7 +10,7 @@ class Address extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
+        'user_email',
         'address_1',
         'address_2',
         'zipcode',
@@ -21,4 +21,6 @@ class Address extends Model
     protected $hidden = [
         'id',
     ];
+
+    public $timestamps = false;
 }

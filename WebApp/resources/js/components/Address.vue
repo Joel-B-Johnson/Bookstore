@@ -9,31 +9,31 @@
 				<li class="form-row">
 		            <label class="description" for="element_5">Address Line 1</label>
 		            <div>
-			            <input name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+			            <input name="element_5" class="element text medium" type="text" maxlength="255"  v-model="adrformData.address_1"/> 
 		            </div> 
 		        </li>
                 <li class="form-row">
                     <label class="description" for="element_2">Address Line 2</label>
                     <div>
-                        <input name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+                        <input name="element_2" class="element text medium" type="text" maxlength="255"  v-model="adrformData.address_2"/> 
                     </div>
                 </li>
                 <li class="form-row">
                     <label class="description" for="element_3">Zipcode</label>
                     <div>
-                    <input name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+                    <input name="element_3" class="element text medium" type="text" maxlength="255"  v-model="adrformData.zipcode"/> 
                     </div>
                     </li>
                 <li class="form-row">
                     <label class="description" for="element_4">City </label>
                     <div>
-                        <input name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+                        <input name="element_4" class="element text medium" type="text" maxlength="255"  v-model="adrformData.city"/> 
                     </div> 
                 </li>
                 <li class="form-row">
                     <label class="description" for="element_6">State </label>
                     <div>
-                        <select class="element select medium" id="element_6" name="element_6"> 
+                        <select class="element select medium" id="element_6" name="element_6" v-model="adrformData.state_id"> 
                             <option value="" selected="selected"></option>
                             <option value="1" >Alabama</option>
                             <option value="2" >Alaska</option>
@@ -101,11 +101,15 @@ export default {
     name: "Address",
     data() {
         return {
-            address_1: "",
-            address_2: "",
-            zipcode: "",
-            city: "",
-            state_id: "",
+            adrformData:
+            {
+                user_email: localStorage.getItem("email"),
+                address_1: "",
+                address_2: "",
+                zipcode: "",
+                city: "",
+                state_id: "",
+            }
         };
     },
     methods:{
@@ -114,6 +118,7 @@ export default {
         },
         handleNewAddress() {
             //Axios Post Request
+            axios.post('api/newAddress', this.adrformData)
         }
     },
     beforeMount(){
