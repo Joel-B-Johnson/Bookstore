@@ -16660,6 +16660,7 @@ __webpack_require__.r(__webpack_exports__);
       document.getElementById("logOut").style.display = "none";
       document.getElementById("login").style.display = "inline-block";
       document.getElementById("accounts").style.display = "none";
+      document.getElementById("orders").style.display = "none";
       document.getElementById("shopping").style.display = "none";
       document.getElementById("admin").style.display = "none";
     }
@@ -16991,7 +16992,7 @@ __webpack_require__.r(__webpack_exports__);
         localStorage.setItem("phone", response.data.user.phone);
         localStorage.setItem("admin", response.data.user.admin);
         localStorage.setItem("token", response.data.token);
-        document.getElementById("loginError").style.display = "none";
+        document.getElementById("passError").style.display = "none";
         document.getElementById("logOut").style.display = "inline-block";
         document.getElementById("login").style.display = "none";
         document.getElementById("accounts").style.display = "inline-block";
@@ -17007,7 +17008,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.$router.push("/");
       })["catch"](function (error) {
         if (error.response) {
-          document.getElementById("loginError").style.display = "block";
+          document.getElementById("passError").style.display = "block";
           console.log(error.response.data);
           console.log(error.response.status);
           console.log(error.response.headers);

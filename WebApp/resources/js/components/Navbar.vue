@@ -31,6 +31,7 @@ export default {
         document.getElementById("logOut").style.display="none";
         document.getElementById("login").style.display="inline-block";
         document.getElementById("accounts").style.display="none";
+        document.getElementById("orders").style.display="none";
         document.getElementById("shopping").style.display="none";
         document.getElementById("admin").style.display="none";
       },
