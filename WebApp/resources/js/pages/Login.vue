@@ -85,6 +85,7 @@ export default {
                 })
                 .catch(function (error) {
                     if (error.response) {
+                        document.getElementById("loginError").style.display="block";
                         console.log(error.response.data);
                         console.log(error.response.status);
                         console.log(error.response.headers);
