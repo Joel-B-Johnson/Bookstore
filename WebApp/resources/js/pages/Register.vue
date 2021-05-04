@@ -132,6 +132,7 @@ export default {
                 document.getElementById("logOut").style.display="inline-block";
                 document.getElementById("login").style.display="none";
                 document.getElementById("accounts").style.display="inline-block";
+                document.getElementById("orders").style.display="inline-block";
                 document.getElementById("shopping").style.display="inline-block";
                 if ((localStorage.getItem("admin")) != 1) {
                     document.getElementById("admin").style.display="none";

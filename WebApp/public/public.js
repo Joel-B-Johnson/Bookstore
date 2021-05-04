@@ -16608,7 +16608,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "UserInfo",
+  name: "Address",
   data: function data() {
     return {
       address_1: "",
@@ -16619,14 +16619,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    displayAddresses: function displayAddresses() {
-      this.first = localStorage.getItem("first_name");
-      this.last = localStorage.getItem("last_name");
-      this.username = localStorage.getItem("username");
-      this.email = localStorage.getItem("email");
-      this.phone = localStorage.getItem("phone");
-      this.admin = localStorage.getItem("admin");
-      this.token = localStorage.getItem("token");
+    displayAddresses: function displayAddresses() {//This will have some code
+    },
+    handleNewAddress: function handleNewAddress() {//Axios Post Request
     }
   },
   beforeMount: function beforeMount() {
@@ -16797,7 +16792,7 @@ __webpack_require__.r(__webpack_exports__);
       },
       test: 0,
       message: '',
-      testicle: '',
+      messageTwo: '',
       bookID: ''
     };
   },
@@ -16817,7 +16812,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     submitNewBook: function submitNewBook() {
-      axios.post('api/newBook', this.formData).then(this.testicle = 'book posted to database');
+      axios.post('api/newBook', this.formData).then(this.messageTwo = 'book posted to database');
     },
     deleteBook: function deleteBook() {
       axios["delete"]('api/deleteBook', this.bookID);
@@ -16887,6 +16882,7 @@ __webpack_require__.r(__webpack_exports__);
         document.getElementById("logOut").style.display = "inline-block";
         document.getElementById("login").style.display = "none";
         document.getElementById("accounts").style.display = "inline-block";
+        document.getElementById("orders").style.display = "inline-block";
         document.getElementById("shopping").style.display = "inline-block";
 
         if (localStorage.getItem("admin") != 1) {
@@ -16988,6 +16984,7 @@ __webpack_require__.r(__webpack_exports__);
         document.getElementById("logOut").style.display = "inline-block";
         document.getElementById("login").style.display = "none";
         document.getElementById("accounts").style.display = "inline-block";
+        document.getElementById("orders").style.display = "inline-block";
         document.getElementById("shopping").style.display = "inline-block";
 
         if (localStorage.getItem("admin") != 1) {
@@ -17055,19 +17052,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "infoList"
+  "class": "container"
 };
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "Address", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"form_description\"><h2>New Address</h2></div><ul class=\"addressList\"><li class=\"form-row\"><label class=\"description\" for=\"element_5\">Address Line 1</label><div><input name=\"element_5\" class=\"element text medium\" type=\"text\" maxlength=\"255\" value=\"\"></div></li><li class=\"form-row\"><label class=\"description\" for=\"element_2\">Address Line 2</label><div><input name=\"element_2\" class=\"element text medium\" type=\"text\" maxlength=\"255\" value=\"\"></div></li><li class=\"form-row\"><label class=\"description\" for=\"element_3\">Zipcode</label><div><input name=\"element_3\" class=\"element text medium\" type=\"text\" maxlength=\"255\" value=\"\"></div></li><li class=\"form-row\"><label class=\"description\" for=\"element_4\">City </label><div><input name=\"element_4\" class=\"element text medium\" type=\"text\" maxlength=\"255\" value=\"\"></div></li><li class=\"form-row\"><label class=\"description\" for=\"element_6\">State </label><div><select class=\"element select medium\" id=\"element_6\" name=\"element_6\"><option value=\"\" selected=\"selected\"></option><option value=\"1\">Alabama</option><option value=\"2\">Alaska</option><option value=\"3\">Arizona</option><option value=\"4\">Arkansas</option><option value=\"5\">California</option><option value=\"6\">Colorado</option><option value=\"7\">Connecticut</option><option value=\"8\">Delaware</option><option value=\"9\">Florida</option><option value=\"10\">Georgia</option><option value=\"11\">Hawaii</option><option value=\"12\">Idaho</option><option value=\"13\">Illinois</option><option value=\"14\">Indiana</option><option value=\"15\">Iowa</option><option value=\"16\">Kansas</option><option value=\"17\">Kentucky</option><option value=\"18\">Louisiana</option><option value=\"19\">Maine</option><option value=\"20\">Maryland</option><option value=\"21\">Massachusetts</option><option value=\"22\">Michigan</option><option value=\"23\">Minnesota</option><option value=\"24\">Mississippi</option><option value=\"25\">Missouri</option><option value=\"26\">Montana</option><option value=\"27\">Nebraska</option><option value=\"28\">Nevada</option><option value=\"29\">New Hampshire</option><option value=\"30\">New Jersey</option><option value=\"31\">New Mexico</option><option value=\"32\">New York</option><option value=\"33\">North Carolina</option><option value=\"34\">North Dakota</option><option value=\"35\">Ohio</option><option value=\"36\">Oklahoma</option><option value=\"37\">Oregon</option><option value=\"38\">Pennsylvania</option><option value=\"39\">Rhode Island</option><option value=\"40\">South Carolina</option><option value=\"41\">South Dakota</option><option value=\"42\">Tennessee</option><option value=\"43\">Texas</option><option value=\"44\">Utah</option><option value=\"45\">Vermont</option><option value=\"46\">Virginia</option><option value=\"47\">Washington</option><option value=\"48\">West Virginia</option><option value=\"49\">Wisconsin</option><option value=\"50\">Wyoming</option></select></div></li><li class=\"form-row\"><button class=\"btn btn-primary btn-blok\" type=\"submit\" name=\"submit\" value=\"Submit\">Submit</button></li></ul>", 2);
+
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("ul", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.address_1), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.address_2), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.zipcode), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.city), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.state_id), 1
-  /* TEXT */
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+    iaction: "#",
+    onSubmit: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return $options.handleNewAddress && $options.handleNewAddress.apply($options, arguments);
+    }, ["prevent"]))
+  }, [_hoisted_3], 32
+  /* HYDRATE_EVENTS */
   )]);
 }
 
@@ -17222,10 +17223,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
+  "class": "container"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h1", null, "User Information", -1
+/* HOISTED */
+);
+
+var _hoisted_3 = {
   "class": "infoList"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("ul", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.first), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.first), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.last), 1
   /* TEXT */
@@ -17239,7 +17248,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.token), 1
   /* TEXT */
-  )]);
+  )])]);
 }
 
 /***/ }),
@@ -17470,7 +17479,7 @@ var render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data,
     onClick: _cache[9] || (_cache[9] = function () {
       return $options.submitNewBook && $options.submitNewBook.apply($options, arguments);
     })
-  }, "Execute")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.testicle), 1
+  }, "Execute")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.messageTwo), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", _hoisted_12, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
     type: "bookid",
@@ -22385,7 +22394,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".infoList {\n  list-style-type: none;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".infoList {\n  list-style-type: none;\n}\n.addressList {\n  list-style-type: none;\n}\n.description {\n  font-weight: bold;\n  padding-right: 20px;\n  padding-left: 100px;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -1,14 +1,16 @@
 <template>
-    <ul class="infoList">
-        <li>{{first}}</li>
-        <li>{{last}}</li>
-        <li>{{username}}</li>
-        <li>{{email}}</li>
-        <li>{{phone}}</li>
-        <li>{{admin}}</li>
-        <li>{{token}}</li>
-
-    </ul>
+    <div class="container">
+        <h1>User Information</h1>
+        <ul class="infoList">
+            <li>{{first}}</li>
+            <li>{{last}}</li>
+            <li>{{username}}</li>
+            <li>{{email}}</li>
+            <li>{{phone}}</li>
+            <li>{{admin}}</li>
+            <li>{{token}}</li>
+        </ul>
+    </div>
 </template>
 
 <script>
