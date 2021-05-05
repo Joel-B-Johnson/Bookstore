@@ -20,6 +20,7 @@ class AddressController extends Controller {
 
     public function getalladdressesrelated($userquery)
     {
-        return Address::find($userquery);
+        return Address::where('user_email', 'like', '%'.$userquery.'%')->get();
     }
 }
+
