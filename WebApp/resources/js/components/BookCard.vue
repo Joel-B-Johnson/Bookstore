@@ -6,7 +6,7 @@
         <h5>ISBN: {{ book.isbn }}</h5>
         <h5 class="price">Price: ${{ book.price.toFixed(2) }}</h5>
         <h5>Stock: {{ book.stock }}</h5>
-        <button class="btn btn-primary btn-blok">View</button>
+        <button class="btn btn-primary btn-blok" @click="$emit('buy-book', book)">Add to Cart</button>
 
  
     </div>
@@ -15,10 +15,6 @@
 <script>
 export default {
     props: ['book'],
-    computed: {
-
-    }
-
 }
 </script>
 
@@ -32,6 +28,22 @@ export default {
     max-width: 30ch;
 }
 .card {
-    padding: 20px 20px 20px 20px;
+    width: 80%;
+    margin: 10%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 5px gray;
+
+    h5.price {
+        color: gray;
+    }
+}
+
+@media (min-width: 500px) {
+    .card {
+        width: 350px;
+        margin: 10px;
+    }
 }
 </style>

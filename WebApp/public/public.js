@@ -16647,8 +16647,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['book'],
-  computed: {}
+  props: ['book']
 });
 
 /***/ }),
@@ -16904,14 +16903,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      books: ""
+      books: "",
+      book: null
     };
   },
   components: {
     BookCard: _components_BookCard_vue__WEBPACK_IMPORTED_MODULE_0__.default
   },
   methods: {
-    getAllBooks: function getAllBooks() {}
+    buyBook: function buyBook(book) {
+      this.book = book;
+    }
   },
   beforeMount: function beforeMount() {
     var _this = this;
@@ -17307,13 +17309,6 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "price"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-  "class": "btn btn-primary btn-blok"
-}, "View", -1
-/* HOISTED */
-);
-
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.book.title), 1
   /* TEXT */
@@ -17327,7 +17322,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, "Stock: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.book.stock), 1
   /* TEXT */
-  ), _hoisted_3]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    "class": "btn btn-primary btn-blok",
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return _ctx.$emit('buy-book', $props.book);
+    })
+  }, "Add to Cart")]);
 }
 
 /***/ }),
@@ -18048,8 +18048,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [_hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($data.books, function (book) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_BookCard, {
+      "class": "cardSpace",
       key: book.id,
-      book: book
+      book: book,
+      onBuyBook: _cache[1] || (_cache[1] = function ($event) {
+        return $options.buyBook($event);
+      })
     }, null, 8
     /* PROPS */
     , ["book"]);
@@ -22944,7 +22948,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card span {\n  font-weight: bold;\n  font-size: 1.5em;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 30ch;\n}\n.card {\n  padding: 20px 20px 20px 20px;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card span {\n  font-weight: bold;\n  font-size: 1.5em;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 30ch;\n}\n.card {\n  width: 80%;\n  margin: 10%;\n  padding: 10px;\n  border-radius: 5px;\n  background-color: white;\n  box-shadow: 0 0 5px gray;\n}\n.card h5.price {\n  color: gray;\n}\n@media (min-width: 500px) {\n.card {\n    width: 350px;\n    margin: 10px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
