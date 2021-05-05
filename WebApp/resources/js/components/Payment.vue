@@ -10,9 +10,9 @@
                 <label for="owner">Card Provider</label>
                 <select v-model="formData.card_provider" name="element_4"> 
                     <option value="" selected="selected"></option>
-                    <option value="1" >Visa</option>
-                    <option value="2" >American Express</option>
-                    <option value="3" >Discover</option>
+                    <option value="Visa" >Visa</option>
+                    <option value="American Express" >American Express</option>
+                    <option value="Discover" >Discover</option>
                 </select>
             </div> 
             <div class="form-group CVV">

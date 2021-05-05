@@ -17516,19 +17516,19 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
 );
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", {
-  value: "1"
+  value: "Visa"
 }, "Visa", -1
 /* HOISTED */
 );
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", {
-  value: "2"
+  value: "American Express"
 }, "American Express", -1
 /* HOISTED */
 );
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", {
-  value: "3"
+  value: "Discover"
 }, "Discover", -1
 /* HOISTED */
 );
