@@ -1,7 +1,12 @@
 <template>
 	<div class="container">
 		<h1>Address</h1>
-		<form iaction="#" @submit.prevent="handleNewAddress">
+        <div id="toppcontainer">
+            <button v-on:click="displayAddresses">GetCurrentAddresses</button>
+            <p> {{ currentAddr }} </p>
+        </div>
+        <div id="mainn">
+		<form action="#" @submit.prevent="handleNewAddress">
 			<div class="form_description">
 			    <h2>New Address</h2>
 		    </div>						
@@ -93,6 +98,7 @@
                     </li>
 			</ul>
 		</form>	
+        </div>
 	</div>
 </template>
 
@@ -101,6 +107,7 @@ export default {
     name: "Address",
     data() {
         return {
+            currentAdr: '',
             adrformData:
             {
                 user_email: localStorage.getItem("email"),
@@ -121,9 +128,7 @@ export default {
             axios.post('api/newAddress', this.adrformData)
         }
     },
-    beforeMount(){
-        this.displayAddresses()
-    },
+    
 };
 </script>
 
