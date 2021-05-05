@@ -9,7 +9,7 @@
                     name="first_name"
                     class="userInfoForm"
                     v-model="formData.first_name"
-                    placeholder=
+                    placeholder="first"
                     required
                 />
             </li>
@@ -20,7 +20,7 @@
                     name="last_name"
                     class="userInfoForm"
                     v-model="formData.last_name"
-                    placeholder="{{last}}"
+                    placeholder="last"
                     required
                 />
             </li>
@@ -31,7 +31,7 @@
                     name="username"
                     class="userInfoForm"
                     v-model="formData.username"
-                    placeholder="{{username}}"
+                    placeholder="username"
                     required
                 />
             </li>
@@ -42,7 +42,7 @@
                     name="email"
                     class="userInfoForm"
                     v-model="formData.email"
-                    placeholder="{{email}}"
+                    placeholder="email"
                     required
                 />
             </li>
@@ -53,7 +53,7 @@
                     name="phone"
                     class="userInfoForm"
                     v-model="formData.phone"
-                    placeholder="{{email}}"
+                    placeholder="phone"
                     required
                 />
             </li>
@@ -95,6 +95,6 @@ export default {
         display: none;
     }
     .userInfoForm {
-        
+        padding-left: 30px;
     }
 </style>
