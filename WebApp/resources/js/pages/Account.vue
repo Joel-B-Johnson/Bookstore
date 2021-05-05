@@ -5,13 +5,15 @@
         </head>
         <div class="sidenav">
             <ul class="accountNav">
-                <li><button @click="userInfo = !userInfo">User</button></li>
-                <li><button @click="address = !address">Addresses</button></li>
+                <li><button @click="userInfo=true, address=false, payment=false">User</button></li>
+                <li><button @click="userInfo=false, address=true, payment=false">Addresses</button></li>
+                <li><button @click="userInfo=false, address=false, payment=true">Cards</button></li>
             </ul>
         </div>
         <div class="mainVue">
             <UserInfo v-if="userInfo" />
             <Address v-if="address" />
+            <Payment v-if="payment" />
         </div>
     </div>
 </template>
@@ -19,11 +21,13 @@
 <script>
 import UserInfo from "../components/UserInfo.vue"
 import Address from "../components/Address.vue"
+import Payment from "../components/Payment.vue"
 export default {
     name: 'Account',
     components: {
         UserInfo,
         Address,
+        Payment,
     },
     data() {
         return {
@@ -33,12 +37,6 @@ export default {
         };
     },
     methods:{
-        displayUserInfo() {
-            console.log("hello world")
-        },
-    },
-    beforeMount(){
-        this.displayUserInfo()
     },
 }
 </script>
@@ -57,6 +55,7 @@ export default {
     background-color: #00a4ef;
     font-size: 16px;
     float: right;
+    width: 150px;
 }
 .sidenav {
   height: 100%; /* 100% Full-height */

@@ -128,9 +128,6 @@ export default {
 </script>
 
 <style lang="scss">
-    .infoList {
-        list-style-type: none;
-    }
     .addressList {
         list-style-type: none;
     }

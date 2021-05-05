@@ -28,6 +28,7 @@ export default {
         localStorage.setItem("email", "");
         localStorage.setItem("token", "");
         localStorage.setItem("phone", "");
+        localStorage.setItem("id", "");
         document.getElementById("logOut").style.display="none";
         document.getElementById("login").style.display="inline-block";
         document.getElementById("accounts").style.display="none";
