@@ -3,14 +3,12 @@
         <title>Rickizon | Home</title>
     </head>
     <div class="book-container">
+      <img id="backgroundrick" src='../../assets/homeBack.jpg' alt="rick">
       <BookCard
         v-for="book in books"
         :key="book.id"
         :book="book"
       />
-    </div>
-    <div class="home">
-      <img src='../../assets/homeBack.jpg' alt="rick">
     </div>
 </template>
 
@@ -38,8 +36,9 @@ export default {
 </script>
 
 <style lang="scss">
-.home img {
+#backgroundrick {
   width: 100%;
+  position:absolute;
 }
 
 .book-container {
