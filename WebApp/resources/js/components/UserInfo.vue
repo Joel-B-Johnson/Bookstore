@@ -2,13 +2,64 @@
     <div class="container">
         <h1>User Information</h1>
         <ul class="infoList">
-            <li>{{first}}</li>
-            <li>{{last}}</li>
-            <li>{{username}}</li>
-            <li>{{email}}</li>
-            <li>{{phone}}</li>
-            <li>{{admin}}</li>
-            <li>{{token}}</li>
+            <li>
+                <label for="first_name">{{first}}</label>
+                <input
+                    type="first_name"
+                    name="first_name"
+                    class="form-control"
+                    v-model="formData.first_name"
+                    placeholder="{{first}}"
+                    required
+                />
+            </li>
+            <li>
+                <label for="last_name">{{first}}</label>
+                <input
+                    type="last_name"
+                    name="last_name"
+                    class="form-control"
+                    v-model="formData.last_name"
+                    placeholder="{{last}}"
+                    required
+                />
+            </li>
+            <li>
+                <label for="username">{{username}}</label>
+                <input
+                    type="username"
+                    name="username"
+                    class="form-control"
+                    v-model="formData.username"
+                    placeholder="{{username}}"
+                    required
+                />
+            </li>
+            <li>
+                <label for="email">{{email}}</label>
+                <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    v-model="formData.email"
+                    placeholder="{{email}}"
+                    required
+                />
+            </li>
+            <li>
+                <label for="phone">{{phone}}</label>
+                <input
+                    type="phone"
+                    name="phone"
+                    class="form-control"
+                    v-model="formData.phone"
+                    placeholder="{{email}}"
+                    required
+                />
+            </li>
+            <li id="userIsAdmin">
+                <label for="admin">Administrator</label>
+            </li>
         </ul>
     </div>
 </template>
@@ -18,34 +69,26 @@ export default {
     name: "UserInfo",
     data() {
         return {
-            first: "",
-            last: "",
-            username: "",
-            email: "",
-            phone: "",
-            admin: "",
-            token: "",
+            first: localStorage.getItem("first_name"),
+            last: localStorage.getItem("last_name"),
+            username:  localStorage.getItem("username"),
+            email: localStorage.getItem("email"),
+            phone: localStorage.getItem("phone"),
+            admin: false,
+            formData: {
+                first_name: "",
+                last_name: "",
+                username: "",
+                email: "",
+                phone: "",
+            },
         };
-    },
-    methods:{
-        displayUserInfo() { 
-            this.first = localStorage.getItem("first_name");
-            this.last = localStorage.getItem("last_name");
-            this.username = localStorage.getItem("username");
-            this.email = localStorage.getItem("email");
-            this.phone = localStorage.getItem("phone");
-            this.admin = localStorage.getItem("admin");
-            this.token = localStorage.getItem("token");
-        },
-    },
-    beforeMount(){
-        this.displayUserInfo()
     },
 };
 </script>
 
 <style lang="scss">
-    .infoList {
-        list-style-type: none;
+    #userIsAdmin {
+        display: none;
     }
 </style>
