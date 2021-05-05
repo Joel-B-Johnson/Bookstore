@@ -16613,7 +16613,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       currentAdr: '',
       adrformData: {
-        user_email: localStorage.getItem("email"),
+        user_email: "thisethan@gmail.com",
         address_1: "",
         address_2: "",
         zipcode: "",
@@ -17198,11 +17198,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function () {
       return $options.displayAddresses && $options.displayAddresses.apply($options, arguments);
     })
-<<<<<<< HEAD
-  }, "GetCurrentAddresses"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.currentAddr), 1
-=======
-  }, "Get current Addresses"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.currentAddr), 1
->>>>>>> c646fc7674e92d9d972d720b31a957cd95d0fb42
+  }, "GetCurrentAddresses"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.currentAddr), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
     action: "#",
@@ -17261,8 +17257,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.adrformData.state_id]])])]), _hoisted_68])], 32
   /* HYDRATE_EVENTS */
   )])]);
-<<<<<<< HEAD
-=======
 }
 
 /***/ }),
@@ -17282,7 +17276,6 @@ __webpack_require__.r(__webpack_exports__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div");
->>>>>>> c646fc7674e92d9d972d720b31a957cd95d0fb42
 }
 
 /***/ }),

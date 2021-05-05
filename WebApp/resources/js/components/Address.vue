@@ -2,13 +2,8 @@
 	<div class="container">
 		<h1>Address</h1>
         <div id="toppcontainer">
-<<<<<<< HEAD
             <button v-on:click="displayAddresses">GetCurrentAddresses</button>
             <p> {{ currentAddr }} </p>
-=======
-            <button v-on:click="displayAddresses">Get current Addresses</button>
-            {{ currentAddr }}
->>>>>>> c646fc7674e92d9d972d720b31a957cd95d0fb42
         </div>
         <div id="mainn">
 		<form action="#" @submit.prevent="handleNewAddress">
@@ -115,7 +110,7 @@ export default {
             currentAdr: '',
             adrformData:
             {
-                user_email: localStorage.getItem("email"),
+                user_email: "thisethan@gmail.com",
                 address_1: "",
                 address_2: "",
                 zipcode: "",

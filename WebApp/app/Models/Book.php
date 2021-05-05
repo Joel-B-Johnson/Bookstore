@@ -13,9 +13,5 @@ class Book extends Model
         'book_image', 'publisher', 'author', 'isbn', 'title', 'price', 'stock'
     ];
 
-    protected $hidden = [
-        'id'
-    ];
-
     public $timestamps = false;
 }
