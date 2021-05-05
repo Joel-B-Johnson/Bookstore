@@ -16662,6 +16662,7 @@ __webpack_require__.r(__webpack_exports__);
       localStorage.setItem("email", "");
       localStorage.setItem("token", "");
       localStorage.setItem("phone", "");
+      localStorage.setItem("id", "");
       document.getElementById("logOut").style.display = "none";
       document.getElementById("login").style.display = "inline-block";
       document.getElementById("accounts").style.display = "none";
@@ -16904,7 +16905,7 @@ __webpack_require__.r(__webpack_exports__);
       // send axios request
       axios.post("api/login", this.formData).then(function (response) {
         console.log(response);
-        localStorage.setItem("user_id", response.data.user.user_id);
+        localStorage.setItem("id", response.data.user.id);
         localStorage.setItem("first_name", response.data.user.first_name);
         localStorage.setItem("last_name", response.data.user.last_name);
         localStorage.setItem("username", response.data.user.username);
@@ -17008,7 +17009,7 @@ __webpack_require__.r(__webpack_exports__);
         data: this.formData
       }).then(function (response) {
         console.log(response);
-        localStorage.setItem("user_id", response.data.user.user_id);
+        localStorage.setItem("id", response.data.user.id);
         localStorage.setItem("first_name", response.data.user.first_name);
         localStorage.setItem("last_name", response.data.user.last_name);
         localStorage.setItem("username", response.data.user.username);

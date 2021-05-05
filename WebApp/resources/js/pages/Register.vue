@@ -120,7 +120,7 @@ export default {
             axios({ method: 'post', url: 'api/register', data: this.formData })
             .then((response) => {
                 console.log(response);
-                localStorage.setItem("user_id", response.data.user.user_id);
+                localStorage.setItem("id", response.data.user.id);
                 localStorage.setItem("first_name", response.data.user.first_name);
                 localStorage.setItem("last_name", response.data.user.last_name);
                 localStorage.setItem("username", response.data.user.username);
