@@ -5,9 +5,11 @@
     <div class="book-container">
       <img id="backgroundrick" src='../../assets/homeBack.jpg' alt="rick">
       <BookCard
+        class="cardSpace"
         v-for="book in books"
         :key="book.id"
         :book="book"
+        v-on:buy-book="buyBook($event)"
       />
     </div>
 </template>
@@ -18,14 +20,16 @@ export default {
   data() {
     return {
       books: "",
+      book: null,
     }
   },
   components: {
     BookCard,
   },
   methods: {
-    getAllBooks() {
-
+    buyBook(book) {
+      this.book = book;
+      
     }
   },
   beforeMount() {
