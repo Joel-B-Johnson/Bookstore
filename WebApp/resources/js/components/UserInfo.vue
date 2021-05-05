@@ -7,18 +7,18 @@
                 <input
                     type="first_name"
                     name="first_name"
-                    class="form-control"
+                    class="userInfoForm"
                     v-model="formData.first_name"
-                    placeholder="{{first}}"
+                    placeholder=
                     required
                 />
             </li>
             <li>
-                <label for="last_name">{{first}}</label>
+                <label for="last_name">{{last}}</label>
                 <input
                     type="last_name"
                     name="last_name"
-                    class="form-control"
+                    class="userInfoForm"
                     v-model="formData.last_name"
                     placeholder="{{last}}"
                     required
@@ -29,7 +29,7 @@
                 <input
                     type="username"
                     name="username"
-                    class="form-control"
+                    class="userInfoForm"
                     v-model="formData.username"
                     placeholder="{{username}}"
                     required
@@ -40,7 +40,7 @@
                 <input
                     type="email"
                     name="email"
-                    class="form-control"
+                    class="userInfoForm"
                     v-model="formData.email"
                     placeholder="{{email}}"
                     required
@@ -51,7 +51,7 @@
                 <input
                     type="phone"
                     name="phone"
-                    class="form-control"
+                    class="userInfoForm"
                     v-model="formData.phone"
                     placeholder="{{email}}"
                     required
@@ -88,7 +88,13 @@ export default {
 </script>
 
 <style lang="scss">
+    .infoList {
+        list-style-type: none;
+    }
     #userIsAdmin {
         display: none;
+    }
+    .userInfoForm {
+        
     }
 </style>
