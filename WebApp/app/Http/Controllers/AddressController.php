@@ -17,4 +17,9 @@ class AddressController extends Controller {
     {
         return Address::create($request -> all());
     }
+
+    public function getalladdressesrelated($userquery)
+    {
+        return Address::find($userquery);
+    }
 }

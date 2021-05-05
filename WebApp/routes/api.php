@@ -32,6 +32,7 @@ Route::get('/pull', [UserController::class, 'index']);
 Route::post('/newBook', [BookController::class, 'newbook']);
 Route::post('/newAddress', [AddressController::class, 'storeaddress']);
 Route::get('/getAddress', [AddressController::class, 'getaddress']);
+Route::get('/assocAddresses', [AddressController:: class, 'getalladdressesrelated']);
 
 //Protected routes
 Route::group(['middleware' => ['auth:sanctum']], function () {

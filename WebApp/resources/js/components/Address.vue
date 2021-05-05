@@ -114,7 +114,7 @@ export default {
     },
     methods:{
         displayAddresses() { 
-            //This will have some code
+            axios.get('api/assocAddresses', localStorage.getItem("email"))
         },
         handleNewAddress() {
             //Axios Post Request
