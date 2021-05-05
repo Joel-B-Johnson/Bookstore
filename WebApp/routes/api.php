@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\StateController;
+use App\Http\Controllers\PaymentsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::get('/books/search/{title}', [BookController::class, 'search']);
 Route::get('/pull', [UserController::class, 'index']);
 Route::post('/newBook', [BookController::class, 'newbook']);
 Route::post('/newAddress', [AddressController::class, 'storeaddress']);
+Route::post('/newCard', [PaymentsController::class, 'store']);
 Route::get('/getAddress', [AddressController::class, 'getaddress']);
 Route::get('/assocAddresses', [AddressController:: class, 'getalladdressesrelated']);
 

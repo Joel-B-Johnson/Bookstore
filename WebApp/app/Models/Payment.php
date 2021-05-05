@@ -10,8 +10,6 @@ class Payment extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'card-provider', 'card_number', 'exp_date',
+        'user_id', 'card_provider', 'card_number', 'exp_date',
     ];
-
-    public $timestamps = false;
 }

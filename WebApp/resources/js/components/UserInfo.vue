@@ -3,55 +3,51 @@
         <h1>User Information</h1>
         <ul class="infoList">
             <li>
-                <label for="first_name">{{first}}</label>
+                <label class="userInfoForm" for="first_name">{{first}}</label>
                 <input
                     type="first_name"
                     name="first_name"
-                    class="userInfoForm"
                     v-model="formData.first_name"
                     placeholder="first"
                     required
                 />
             </li>
             <li>
-                <label for="last_name">{{last}}</label>
+                <label class="userInfoForm" for="last_name">{{last}}</label>
                 <input
                     type="last_name"
                     name="last_name"
-                    class="userInfoForm"
                     v-model="formData.last_name"
                     placeholder="last"
                     required
                 />
             </li>
             <li>
-                <label for="username">{{username}}</label>
+                <label class="userInfoForm" for="username">{{username}}</label>
                 <input
                     type="username"
                     name="username"
-                    class="userInfoForm"
+
                     v-model="formData.username"
                     placeholder="username"
                     required
                 />
             </li>
             <li>
-                <label for="email">{{email}}</label>
+                <label class="userInfoForm" for="email">{{email}}</label>
                 <input
                     type="email"
                     name="email"
-                    class="userInfoForm"
                     v-model="formData.email"
                     placeholder="email"
                     required
                 />
             </li>
             <li>
-                <label for="phone">{{phone}}</label>
+                <label class="userInfoForm" for="phone">{{phone}}</label>
                 <input
                     type="phone"
                     name="phone"
-                    class="userInfoForm"
                     v-model="formData.phone"
                     placeholder="phone"
                     required
@@ -59,6 +55,9 @@
             </li>
             <li id="userIsAdmin">
                 <label for="admin">Administrator</label>
+            </li>
+            <li class="form-row">
+                        <button class="btn btn-primary btn-blok" type="submit" name="submit" value="Submit">Submit</button>
             </li>
         </ul>
     </div>
@@ -95,6 +94,6 @@ export default {
         display: none;
     }
     .userInfoForm {
-        padding-left: 30px;
+        padding-right: 30px;
     }
 </style>
