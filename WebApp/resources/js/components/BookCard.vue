@@ -6,7 +6,7 @@
         <h5>ISBN: {{ book.isbn }}</h5>
         <h5 class="price">Price: ${{ book.price.toFixed(2) }}</h5>
         <h5>Stock: {{ book.stock }}</h5>
-        <button class="view-book-button"></button>
+        <button class="view-book-button">Add</button>
 
  
     </div>
