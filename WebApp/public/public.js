@@ -17277,7 +17277,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
   "class": "view-book-button"
-}, "Add", -1
+}, "View", -1
 /* HOISTED */
 );
 
