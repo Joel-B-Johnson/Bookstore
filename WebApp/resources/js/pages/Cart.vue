@@ -1,5 +1,10 @@
 <template>
-    <h1>This is the shopping cart</h1>
+    <div class="cart-item-card">
+        <div class="header">
+            <h3>{{ book.title }}</h3>
+        </div>
+        
+    </div>
 </template>
 
 <script>
