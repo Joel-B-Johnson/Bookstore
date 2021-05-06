@@ -14,6 +14,12 @@
         </div>
         <br><hr>
         <div>
+          <p> Retrieve Current Month's Orders: </p>
+          <p> {{messageThree}} </p>
+          <button v-on:click="getOrders">Execute</button>
+        </div>
+        <br><hr>
+        <div>
           <form action="#">
             <p>Add a new book to the database</p>
             <input type="text" placeholder="Book Name" v-model="formData.title" required>
@@ -55,6 +61,7 @@ data() {
     test: 0,
     message: '',
     messageTwo: '',
+    messageThree: '',
     bookID: '',
   }
 },
@@ -72,6 +79,9 @@ methods: {
   },
   deleteBook() {
     axios.delete('api/deleteBook', this.bookID)
+  },
+  getOrders() {
+    axios.get('api/getOrders').then(response => { this.messageThree = response.data })
   }
 }
 };

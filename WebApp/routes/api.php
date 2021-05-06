@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AddressController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\PaymentsController;
+use App\Http\Controllers\OrdersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 
 //Public routes
 Route::post('/register', [AuthController::class, 'register']);
+Route::post('/storeOrderLine', [OrdersController::class, 'storeOrderLine']);
+Route::post('/storeOrder', [OrdersController::class, 'storeOrder']);
+Route::get('/getOrders', [OrdersController::class, 'index']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/newState', [StateController::class, 'store']);
 Route::get('/books', [BookController::class, 'index']);

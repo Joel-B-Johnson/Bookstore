@@ -5,16 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class OrderLine extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'user_id',
-        'subtotal',
+        'order_id',
+        'book_id',
+        'quantity',
         'total',
-        'confirmation_number',
     ];
 
 
+    public $timestamps = false;
 }

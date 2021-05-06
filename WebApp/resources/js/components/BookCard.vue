@@ -8,11 +8,11 @@
         <h5>Stock: {{ book.stock }}</h5>
         <div class="cart-total">
             <h5 class="inCart">In Cart</h5>
-            <h5 class="inCartTotal">{{ book_total }}</h5>
+            <h5 class="inCartTotal">{{ bookTotal }}</h5>
         </div>
         <div class="button-container">
-            <button v-on:click="removeCart" class="remove">Remove</button>
-            <button v-on:click="addToCart" class="add">Add</button>
+            <button v-on:click="bookTotal--" class="remove">Remove</button>
+            <button v-on:click="bookTotal++" class="add">Add</button>
         </div>
     </div>
 </template>
@@ -20,17 +20,10 @@
 <script>
 export default {
     props: ['book'],
-    method: {
-        
-    },
-    watch: {
-        book_total() {
-            var cart = localStorage.getItem("cart");
-            var myBook = this.book.id;
-            var re = new RegExp(myBook, 'g');
-            let count = (cart.match(re) || []).length;
-            return count;
-        },
+    data() {
+        return{
+            bookTotal: 0,
+        };
     },
     computed: {
         removeCart: function (event) {
