@@ -29,10 +29,12 @@ export default {
   methods: {
     buyBook(book) {
       this.book = book;
-      
-    }
+      console.log(this.book)
+    },
   },
   beforeMount() {
+      let cart = "";
+      localStorage.setItem("cart", cart);
       axios.get('api/books')
       .then(response => { this.books = response.data })
   },

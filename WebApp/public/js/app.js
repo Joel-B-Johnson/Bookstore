@@ -16647,7 +16647,35 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['book']
+  props: ['book'],
+  method: {},
+  watch: {
+    book_total: function book_total() {
+      var cart = localStorage.getItem("cart");
+      var myBook = this.book.id;
+      var re = new RegExp(myBook, 'g');
+      var count = (cart.match(re) || []).length;
+      return count;
+    }
+  },
+  computed: {
+    removeCart: function removeCart(event) {
+      var cart = localStorage.getItem("cart");
+      var newCart = cart.replace(this.book.id, '');
+    },
+    addToCart: function addToCart(event) {
+      var cart = localStorage.getItem("cart");
+      cart += "  " + this.book.id + "  ";
+      localStorage.setItem("cart", cart);
+    },
+    book_total: function book_total() {
+      var cart = localStorage.getItem("cart");
+      var myBook = this.book.id;
+      var re = new RegExp(myBook, 'g');
+      var count = (cart.match(re) || []).length;
+      return count;
+    }
+  }
 });
 
 /***/ }),
@@ -16913,11 +16941,14 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     buyBook: function buyBook(book) {
       this.book = book;
+      console.log(this.book);
     }
   },
   beforeMount: function beforeMount() {
     var _this = this;
 
+    var cart = "";
+    localStorage.setItem("cart", cart);
     axios.get('api/books').then(function (response) {
       _this.books = response.data;
     });
@@ -17309,6 +17340,22 @@ var _hoisted_1 = {
 var _hoisted_2 = {
   "class": "price"
 };
+var _hoisted_3 = {
+  "class": "cart-total"
+};
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", {
+  "class": "inCart"
+}, "In Cart", -1
+/* HOISTED */
+);
+
+var _hoisted_5 = {
+  "class": "inCartTotal"
+};
+var _hoisted_6 = {
+  "class": "button-container"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.book.title), 1
   /* TEXT */
@@ -17322,12 +17369,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", null, "Stock: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.book.stock), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
-    "class": "btn btn-primary btn-blok",
-    onClick: _cache[1] || (_cache[1] = function ($event) {
-      return _ctx.$emit('buy-book', $props.book);
-    })
-  }, "Add to Cart")]);
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h5", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.book_total), 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[1] || (_cache[1] = function () {
+      return $options.removeCart && $options.removeCart.apply($options, arguments);
+    }),
+    "class": "remove"
+  }, "Remove"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+    onClick: _cache[2] || (_cache[2] = function () {
+      return $options.addToCart && $options.addToCart.apply($options, arguments);
+    }),
+    "class": "add"
+  }, "Add")])]);
 }
 
 /***/ }),
@@ -17827,8 +17881,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "cart-item-card"
+};
+var _hoisted_2 = {
+  "class": "header"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("h1", null, "This is the shopping cart");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h3", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.book.title), 1
+  /* TEXT */
+  )])]);
 }
 
 /***/ }),
@@ -22971,7 +23033,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".card span {\n  font-weight: bold;\n  font-size: 1.5em;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 30ch;\n}\n.card {\n  width: 80%;\n  margin: 10%;\n  padding: 10px;\n  border-radius: 5px;\n  background-color: white;\n  box-shadow: 0 0 5px gray;\n}\n.card h5.price {\n  color: gray;\n}\n@media (min-width: 500px) {\n.card {\n    width: 350px;\n    margin: 10px;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".card span {\n  font-weight: bold;\n  font-size: 1.5em;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  max-width: 30ch;\n}\n.card {\n  width: 80%;\n  margin: 10%;\n  padding: 10px;\n  border-radius: 5px;\n  background-color: white;\n  box-shadow: 0 0 5px gray;\n}\n.card h5.price {\n  color: gray;\n}\n.card .button-container button {\n  color: white;\n  width: 100px;\n  border: none;\n  padding: 10px;\n  border-radius: 5px;\n  margin: 5px 5px 5px 5px;\n  cursor: pointer;\n  justify-content: center;\n  align-items: center;\n  background-color: #00a4ef;\n}\n.card .cart-total h5.inCart {\n  text-align: center;\n  font-weight: bold;\n}\n.card .cart-total h5.inCartTotal {\n  text-align: center;\n}\n@media (min-width: 500px) {\n.card {\n    width: 350px;\n    margin: 10px;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

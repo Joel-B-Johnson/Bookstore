@@ -6,15 +6,50 @@
         <h5>ISBN: {{ book.isbn }}</h5>
         <h5 class="price">Price: ${{ book.price.toFixed(2) }}</h5>
         <h5>Stock: {{ book.stock }}</h5>
-        <button class="btn btn-primary btn-blok" @click="$emit('buy-book', book)">Add to Cart</button>
-
- 
+        <div class="cart-total">
+            <h5 class="inCart">In Cart</h5>
+            <h5 class="inCartTotal">{{ book_total }}</h5>
+        </div>
+        <div class="button-container">
+            <button v-on:click="removeCart" class="remove">Remove</button>
+            <button v-on:click="addToCart" class="add">Add</button>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
     props: ['book'],
+    method: {
+        
+    },
+    watch: {
+        book_total() {
+            var cart = localStorage.getItem("cart");
+            var myBook = this.book.id;
+            var re = new RegExp(myBook, 'g');
+            let count = (cart.match(re) || []).length;
+            return count;
+        },
+    },
+    computed: {
+        removeCart: function (event) {
+            var cart =  localStorage.getItem("cart");
+            var newCart = cart.replace(this.book.id, '');
+        },
+        addToCart: function (event) {
+            var cart =  localStorage.getItem("cart");
+            cart += ("  " + this.book.id + "  ");
+            localStorage.setItem("cart", cart);
+        },
+        book_total() {
+            var cart = localStorage.getItem("cart");
+            var myBook = this.book.id;
+            var re = new RegExp(myBook, 'g');
+            let count = (cart.match(re) || []).length;
+            return count;
+        },
+    },
 }
 </script>
 
@@ -37,6 +72,31 @@ export default {
 
     h5.price {
         color: gray;
+    }
+
+    .button-container {
+        button {
+            color: white;
+            width: 100px;
+            border:none;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px  5px 5px 5px;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            background-color: #00a4ef;
+        }
+    }
+
+    .cart-total {
+        h5.inCart {
+            text-align: center;
+            font-weight: bold;
+        }
+        h5.inCartTotal {
+            text-align: center;
+        }
     }
 }
 
